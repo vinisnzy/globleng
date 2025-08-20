@@ -1,0 +1,27 @@
+@import url('variables.css');
+
+video {
+    width: 100%;
+    height: 856px;
+}
+
+.video-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 37pt;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.video-title span {
+    font-family: "Poppins", sans-serif;
+    color: #e3dac0;
+}
+
+.video-title p {
+    color: #a4a4a4;
+    font-weight: 400;
+    font-size: 17pt;
+}

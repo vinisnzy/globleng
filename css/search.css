@@ -1,0 +1,75 @@
+@import url('variables.css');
+
+main .search {
+    background-image: url('../assets/imgs/bg-globleng.jpg');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    width: 100%;
+    height: 550px;
+}
+
+.search-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 700px;
+    max-width: 95%;
+}
+
+.search-top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-top i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.search-top input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    color: #333;
+}
+
+.search-bottom {
+    display: flex;
+    padding: 10px 0px 10px 0px;
+}
+
+.search-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #999;
+}
+
+.search-field i {
+    margin-right: 10px;
+}
+
+.search-field input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}
+
+.divider {
+    width: 1px;
+    background: #ccc;
+}

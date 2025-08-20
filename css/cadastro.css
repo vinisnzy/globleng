@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color:#F3CEC5;
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    background-image:url(../assets/imgs/fundo.png);
+    background-size: cover;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 60px; 
+    border-radius: 80px; 
+    border: 1px #F3CEC5;
+    width: 400%;
+    max-width: 400px; 
+}
+#seja{
+    font-size: 70px;
+    padding-left: 200px;
+    padding-right: 150px;
+}
+h1{
+    font-size: 35px;
+    margin-top: 0;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+.form-group{
+    margin-bottom: 15px;
+    
+}
+label{
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-family: Jomolhari;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea{
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 60px;
+    border: 1px #F3CEC5;
+    box-sizing: border-box;
+    color: #000000;
+}
+input{
+    background-color: #FFFFFF;
+    color: #F3CEC5;
+}
+.button1{
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFFFFF; 
+    color: #000000;   
+    font-family: Jomolhari;
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+    }
+.button1:hover {
+    background-color: #2e4a1a;
+}
+select {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 60px;
+    border: 1px #F3CEC5;
+    box-sizing: border-box;
+    display: block;
+
+    font-family: Jomolhari;
+    background-color: #A30B37;
+}
+p{
+    font-size: Jomolhari;
+    text-align: center;
+    color: #ffffff;
+}
+#logar{
+    font-family: Jomolhari;
+    color: #2e4a1a;
+}
+a{
+    color: rgb(0, 82, 15);
+}
