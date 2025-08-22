@@ -1,33 +1,36 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "amanda"; 
-
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = new mysqli("localhost", "root", "", "globleng_db");
 
 if ($conn->connect_error) {
-    header("Location: Cadastro.php?status=error&message=" . urlencode("Falha na conexão com o banco de dados: " . $conn->connect_error));
+    echo "Erro na conexão: " . $conn->connect_error;
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
-    $nome = $conn->real_escape_string($_POST['nome']);
-    $email = $conn->real_escape_string($_POST['email']);
-    $cpf = $conn->real_escape_string($_POST['cpf']);
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); 
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $cpf = $_POST['cpf'];
+    $senha = $_POST['senha'];
 
-    $sql = "INSERT INTO clientes (nome, email, cpf, senha_hash)
-            VALUES ('$nome', '$email', '$cpf', '$senha')";
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: Cadastro.php?status=success");
-        exit();
-    } else {
-        header("Location: Cadastro.php?status=error&message=" . urlencode("Erro ao cadastrar: " . $conn->error));
+    $stmt = $conn->prepare("INSERT INTO clientes (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
+
+    if ($stmt === false) {
+        echo "Erro na preparação da query: " . $conn->error;
         exit();
     }
+
+    // "ssss" = 4 strings
+    $stmt->bind_param("ssss", $nome, $email, $cpf, $senha_hash);
+
+    if ($stmt->execute()) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
 
 $conn->close();
