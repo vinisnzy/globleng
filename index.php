@@ -2,7 +2,6 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-$logado = isset($_SESSION['usuario_id']) ? true : false;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,7 +28,7 @@ $logado = isset($_SESSION['usuario_id']) ? true : false;
       <nav>
         <a href="#search" class="link-search"><i class="fa fa-search"></i></a>
 
-        <?php if ($logado): ?>
+        <?php if (isset($_SESSION['usuario_id'])): ?>
           <div class="welcome-container">
             <p>Olá, <?php echo htmlspecialchars($_SESSION['usuario_nome']) ?>!</p>
             <a href="login/logout.php"><button href="login/logout.php" class="logout-button">Sair</button></a>
