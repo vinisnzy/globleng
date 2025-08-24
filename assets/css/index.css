@@ -40,7 +40,49 @@ nav {
     margin-right: 60px;
 }
 
-nav a button {
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.welcome-container p {
+    margin-top: 15px;
+    cursor: pointer;
+}
+.welcome-container a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.logout-button {
+  display: block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  width: 80%;
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.welcome-container:hover .logout-button {
+  background-color: var(--dark-green);
+  height: 30px;
+  opacity: 1;
+}
+
+.login-button {
     font-size: 12pt;
     border: none;
     padding: 10px 35px 10px 35px;
@@ -51,18 +93,13 @@ nav a button {
     transition: 0.3s;
 }
 
-nav a button:hover {
-    background-color: #243a15;
+.login-button:hover {
+    background-color: var(--dark-green);
 }
 
-.lupa {
-    width: 35px;
-    height: 35px;
-}
-
-.menu {
-    width: 50px;
-    height: 50px;
+nav .link-search {
+    color: var(--brown);
+    font-size: 16pt;
 }
 
 header .down {

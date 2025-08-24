@@ -1,7 +1,7 @@
 @import url('variables.css');
 
 main .search {
-    background-image: url('../assets/imgs/bg-globleng.jpg');
+    background-image: url('../imgs/bg-globleng.jpg');
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-position: center;
