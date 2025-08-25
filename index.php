@@ -15,6 +15,8 @@ if (!isset($_SESSION)) {
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/search.css">
+  <link rel="stylesheet" href="assets/css/carousel.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <title>Globleng</title>
 </head>
 
@@ -73,7 +75,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
     </div>
-    <section id="cards-globleng" class="destinos-globleng">
+    <section id="list" class="destinos-globleng">
       <div class="card-globleng">
         <img src="./assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
         <div class="card-overlay">
@@ -100,7 +102,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
 
-      <div class="card-globleng card-secundario">
+      <div class="card-globleng">
         <img src="./assets/imgs/cards/card-zermatt.jpg" alt="Zermatt" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 3.200</strong></div>
@@ -113,7 +115,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
 
-      <div class="card-globleng card-secundario">
+      <div class="card-globleng">
         <img src="./assets/imgs/cards/card-bariloche.jpg" alt="Bariloche" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 2.377</strong></div>
@@ -125,7 +127,7 @@ if (!isset($_SESSION)) {
           <div class="card-avaliacao">⭐ 5.0 <i class="fa fa-plus"></i></div>
         </div>
       </div>
-      <div class="card-globleng card-oculto">
+      <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-londres.jpg" alt="Londres" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 4.890</strong></div>
@@ -138,7 +140,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
 
-      <div class="card-globleng card-oculto">
+      <div class="card-globleng oculto">
         <img
           src="./assets/imgs/cards/card-cidade-do-cabo.jpg"
           alt="Cidade do Cabo" />
@@ -153,7 +155,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
 
-      <div class="card-globleng card-oculto">
+      <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-dubai.jpg" alt="Dubai" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 6.150</strong></div>
@@ -166,7 +168,7 @@ if (!isset($_SESSION)) {
         </div>
       </div>
 
-      <div class="card-globleng card-oculto">
+      <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-queenstown.jpg" alt="Queenstown" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 5.540</strong></div>
@@ -216,8 +218,9 @@ if (!isset($_SESSION)) {
       <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
-
-  <script src="index.js"></script>
 </body>
+<script src="index.js"></script>
+<script src="./components/list.js"></script>
+<script src="./components/carousel.js"></script>
 
 </html>
