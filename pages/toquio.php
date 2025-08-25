@@ -11,7 +11,7 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-  <link rel="stylesheet" href="../assets/css/toquio.css">
+  <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <title>Tóquio</title>
@@ -24,7 +24,7 @@
         <p>12.184 reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../assets/videos/toquio-video.mp4" type="video/mp4">
+        <source src="../assets/videos/toquio.mp4" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
@@ -55,18 +55,18 @@
       <li class="pass oculto">
         <i class="fa-solid fa-plane"></i>
         <div class="pass-info">
-          <p>11:00 — 1 conexão - 14:00</p>
-          <p>03h00 de vôo</p>
+          <p>09:00 — 1 conexão - 18:00</p>
+          <p>09h00 de vôo</p>
         </div>
-        <p class="pass-price"><span class="fi fi-br"></span>R$ 2.845</p>
+        <p class="pass-price"><span class="fi fi-br"></span>R$ 4.321</p>
       </li>
       <li class="pass oculto">
         <i class="fa-solid fa-plane"></i>
         <div class="pass-info">
-          <p>11:00 - 1 conexão - 14:00</p>
-          <p>03h00 de vôo</p>
+          <p>17:00 - 1 conexão - 21:00</p>
+          <p>04h00 de vôo</p>
         </div>
-        <p class="pass-price"><span class="fi fi-br"></span>R$ 2.845</p>
+        <p class="pass-price"><span class="fi fi-br"></span>R$ 1.556</p>
       </li>
     </ul>
     <div class="btn-ver-mais-wrapper">

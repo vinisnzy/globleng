@@ -42,7 +42,6 @@ if (!isset($_SESSION)) {
     </div>
     <div class="down">
       <h2>Descubra o mundo, Dessas <span>maravilhas</span> ocultas!</h2>
-      <p>Veja mais abaixo...</p>
     </div>
   </header>
   <main>
@@ -80,7 +79,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 4.256</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/toronto.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Toronto</h3>
@@ -93,7 +94,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-toquio.jpg" alt="Tóquio" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 7.309</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/toquio.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Tóquio</h3>
@@ -106,7 +109,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-zermatt.jpg" alt="Zermatt" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 3.200</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/zermatt.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Zermatt</h3>
@@ -119,7 +124,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-bariloche.jpg" alt="Bariloche" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 2.377</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/bariloche.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Bariloche</h3>
@@ -131,7 +138,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-londres.jpg" alt="Londres" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 4.890</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/londres.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Londres</h3>
@@ -146,7 +155,9 @@ if (!isset($_SESSION)) {
           alt="Cidade do Cabo" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 3.720</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/cidade-do-cabo.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Cidade do Cabo</h3>
@@ -159,7 +170,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-dubai.jpg" alt="Dubai" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 6.150</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/dubai.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Dubai</h3>
@@ -172,7 +185,9 @@ if (!isset($_SESSION)) {
         <img src="./assets/imgs/cards/card-queenstown.jpg" alt="Queenstown" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ 5.540</strong></div>
-          <div class="card-vermais">Ver mais</div>
+          <a href="pages/queenstown.php">
+            <div class="card-vermais">Ver mais</div>
+          </a>
         </div>
         <div class="card-info">
           <h3>Queenstown</h3>

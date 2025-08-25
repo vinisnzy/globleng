@@ -1,0 +1,129 @@
+@import url('variables.css');
+
+body {
+    background-color: var(--bg);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  filter: brightness(0.6);
+}
+
+.video-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 37pt;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
+.video-title span {
+    font-family: "Poppins", sans-serif;
+    color: var(--bg);
+}
+
+.video-title p {
+    color: #a4a4a4;
+    font-weight: 400;
+    font-size: 17pt;
+}
+
+.passes {
+    width: 100%;
+    position: relative;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pass {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: var(--white);
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 90px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.pass:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pass i {
+    font-size: 26pt;
+}
+
+.pass .pass-info {
+    margin-left: 50px;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.pass .pass-price {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.pass .pass-price span {
+    margin-right: 5px;
+}
+
+.oculto {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.visivel {
+    display: flex;
+    opacity: 1;
+}
+
+.pass:nth-child(1) {
+    margin-top: 0px;
+}
+
+.btn-ver-mais-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-ver-mais {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    color: var(--green);
+    padding: 12px 15%;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+    background-color: var(--green);
+    color: white;
+}
