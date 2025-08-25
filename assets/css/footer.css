@@ -1,0 +1,39 @@
+.globleng-footer {
+  background-color: var(--green);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  font-size: 26pt;
+}
+
+.footer-left p {
+  font-size: 18pt;
+  font-weight: 300;
+}
+
+.footer-left strong {
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+.footer-center img {
+  margin: 10% 0px 10% 0px ;
+  height: 350px;
+}
+
+.footer-right {
+    margin-right: 50px;
+}
+
+.footer-right a {
+  color: white;
+  font-size: 24pt;
+  margin-left: 40px;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #f0c05a;
+}
