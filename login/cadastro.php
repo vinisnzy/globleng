@@ -10,8 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $cpf = preg_replace('/\D/', '', $_POST['cpf']);
   $senha = $_POST['senha'];
 
-
   $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+  $erro = validar_cadastro($email, $cpf, $senha);
 
   $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
 
@@ -19,8 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Erro na preparação da query: " . $conn->error;
     exit();
   }
-
-  $erro = validar_cadastro($email, $cpf, $senha);
 
   // "ssss" = 4 strings
   $stmt->bind_param("ssss", $nome, $email, $cpf, $senha_hash);
