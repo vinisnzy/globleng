@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Banco de dados: `globleng_db`
 --
 
+CREATE DATABASE globleng_db;
+USE globleng_db;
+
 -- --------------------------------------------------------
 
 --
