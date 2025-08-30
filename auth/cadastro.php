@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../includes/conexao.php';
 require_once 'validacao_cadastro.php';
 
 $erro = '';
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-  $erro = validar_cadastro($email, $cpf, $senha);
+  $erro = validarCadastro($email, $cpf, $senha);
 
   $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
 

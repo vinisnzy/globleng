@@ -1,7 +1,7 @@
 <?php
-require_once 'conexao.php';
+require_once '../includes/conexao.php';
 
-function validar_cadastro($email, $cpf, $senha) {
+function validarCadastro($email, $cpf, $senha) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return "Email inválido.";
     }
