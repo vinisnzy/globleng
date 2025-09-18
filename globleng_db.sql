@@ -21,9 +21,6 @@ SET time_zone = "+00:00";
 -- Banco de dados: `globleng_db`
 --
 
-CREATE DATABASE globleng_db;
-USE globleng_db;
-
 -- --------------------------------------------------------
 
 --
@@ -150,9 +147,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `senha`, `data_criacao`) VALUES
-(1, 'Vinícius de Paula Moraes', 'vinicius@gmail.com', '12377576907', '$2y$10$iRKImLEgubhV7qCXPsxJ8.trYnwmul3HGtgVDY8OXed6ZyiMvLuWm', '2025-08-22 11:56:08'),
-(2, 'joaozinho', 'joaozinho@gmail.com', '12345678912', '$2y$10$lCbofrBifsIAtRpLVXml..9LQocLMu1eoJ/owJtSyukFGBKvyDzkm', '2025-08-24 14:25:50'),
-(3, 'Vinícius', 'vinicius1@gmail.com', '98765432103', '$2y$10$45h/eFEqI8MscwhXqCFBFO6oqAlOUzwKyFsnJ6kXc.s1Z4eKLI0U6', '2025-08-30 18:51:03');
+(1, 'Vinícius de Paula Moraes', 'vinicius@gmail.com', '12377576907', '$2y$10$iRKImLEgubhV7qCXPsxJ8.trYnwmul3HGtgVDY8OXed6ZyiMvLuWm', '2025-08-22 11:56:08');
 
 --
 -- Índices para tabelas despejadas
