@@ -1,42 +1,4 @@
 <?php
-/* require_once '../includes/conexao.php';
-
-$erro = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows === 1) {
-        $usuario = $result->fetch_assoc();
-        if (password_verify($senha, $usuario['senha'])) {
-            echo "Login bem-sucedido!";
-
-            if (!isset($_SESSION)) {
-                session_start();
-            }
-
-            $primeiro_nome = explode(" ", $usuario['nome'])[0];
-            $_SESSION['usuario_id'] = $usuario['id'];
-            $_SESSION['usuario_nome'] = $primeiro_nome;
-
-            header("Location: ../index.php");
-            exit();
-        } else {
-            $erro = "Email ou senha incorretos.";
-        }
-    } else {
-        $erro = "Email ou senha incorretos.";
-    }
-
-    $stmt->close();
-} */
-
 require_once '../views/UsuarioView.php';
 
 $erro = '';

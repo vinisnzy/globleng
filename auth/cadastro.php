@@ -1,40 +1,4 @@
 <?php
-/* require_once '../includes/conexao.php';
-require_once 'validacao_cadastro.php';
-
-$erro = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $nome = $_POST['nome'];
-  $email = $_POST['email'];
-  $cpf = preg_replace('/\D/', '', $_POST['cpf']);
-  $senha = $_POST['senha'];
-
-  $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
-
-  $erro = validarCadastro($email, $cpf, $senha);
-
-  $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
-
-  if ($stmt === false) {
-    echo "Erro na preparação da query: " . $conn->error;
-    exit();
-  }
-
-  // "ssss" = 4 strings
-  $stmt->bind_param("ssss", $nome, $email, $cpf, $senha_hash);
-
-  if (!$erro) {
-    if ($stmt->execute()) {
-      header("Location: login.php");
-      exit();
-    } else {
-      echo "Erro ao cadastrar: " . $stmt->error;
-    }
-  }
-  $stmt->close();
-} */
-
 require_once '../views/UsuarioView.php';
 
 $erro = '';
