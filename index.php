@@ -1,8 +1,9 @@
 <?php
 require_once 'views/UsuarioView.php';
-include_once 'includes/functions/menor_preco_por_destino.php';
+include_once 'views/PassagemView.php';
 
 $usuarioView = new UsuarioView();
+$passagemView = new PassagemView();
 
 if (!isset($_SESSION)) {
   session_start();
@@ -83,7 +84,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng">
         <img src="./assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong> R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Toronto')) ?></strong></div>
+          <div class="card-preco">A partir de <strong> R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Toronto')) ?></strong></div>
           <a href="pages/toronto.php">
             <div class="card-vermais">Ver mais</div>  
           </a>
@@ -98,7 +99,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng">
         <img src="./assets/imgs/cards/card-toquio.jpg" alt="Tóquio" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Tóquio')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Tóquio')) ?></strong></div>
           <a href="pages/toquio.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -113,7 +114,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng">
         <img src="./assets/imgs/cards/card-zermatt.jpg" alt="Zermatt" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Zermatt')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Zermatt')) ?></strong></div>
           <a href="pages/zermatt.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -128,7 +129,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng">
         <img src="./assets/imgs/cards/card-bariloche.jpg" alt="Bariloche" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Bariloche')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Bariloche')) ?></strong></div>
           <a href="pages/bariloche.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -142,7 +143,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-londres.jpg" alt="Londres" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Londres')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Londres')) ?></strong></div>
           <a href="pages/londres.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -159,7 +160,7 @@ if (!isset($_SESSION)) {
           src="./assets/imgs/cards/card-cidade-do-cabo.jpg"
           alt="Cidade do Cabo" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong><?php echo htmlspecialchars(menorPrecoPorDestino('Cidade do Cabo')) ?></strong></div>
+          <div class="card-preco">A partir de <strong><?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Cidade do Cabo')) ?></strong></div>
           <a href="pages/cidade-do-cabo.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -174,7 +175,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-dubai.jpg" alt="Dubai" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Dubai')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Dubai')) ?></strong></div>
           <a href="pages/dubai.php">
             <div class="card-vermais">Ver mais</div>
           </a>
@@ -189,7 +190,7 @@ if (!isset($_SESSION)) {
       <div class="card-globleng oculto">
         <img src="./assets/imgs/cards/card-queenstown.jpg" alt="Queenstown" />
         <div class="card-overlay">
-          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars(menorPrecoPorDestino('Queenstown')) ?></strong></div>
+          <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Queenstown')) ?></strong></div>
           <a href="pages/queenstown.php">
             <div class="card-vermais">Ver mais</div>
           </a>

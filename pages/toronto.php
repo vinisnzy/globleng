@@ -1,3 +1,8 @@
+<?php
+  require_once('../views/PassagemView.php');
+  $passagemView = new PassagemView();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,8 +34,7 @@
     </div>
     <ul id="list" class="passes">
       <?php
-      include_once('../includes/functions/listar_passagens.php');
-      listarPassagensPorDestino('Toronto');
+      $passagemView->listarPassagensPorDestino('Toronto');
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
