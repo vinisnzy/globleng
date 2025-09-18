@@ -1,5 +1,8 @@
 <?php
+require_once 'views/UsuarioView.php';
 include_once 'includes/functions/menor_preco_por_destino.php';
+
+$usuarioView = new UsuarioView();
 
 if (!isset($_SESSION)) {
   session_start();
@@ -35,7 +38,7 @@ if (!isset($_SESSION)) {
         <?php if (isset($_SESSION['usuario_id'])): ?>
           <div class="welcome-container">
             <p>Olá, <?php echo htmlspecialchars($_SESSION['usuario_nome']) ?>!</p>
-            <a href="./auth/logout.php"><button class="logout-button">Sair</button></a>
+            <a href="./auth/logou"><button class="logout-button">Sair</button></a>
           </div>
         <?php else: ?>
           <a href="./auth/login.php"><button class="login-button">Login</button></a>

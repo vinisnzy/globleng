@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/conexao.php';
+/* require_once '../includes/conexao.php';
 require_once 'validacao_cadastro.php';
 
 $erro = '';
@@ -33,6 +33,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
   $stmt->close();
+} */
+
+require_once '../views/UsuarioView.php';
+
+$erro = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $usuarioView = new UsuarioView();
+
+  $nome = trim($_POST['nome'] ?? '');
+  $email = trim($_POST['email'] ?? '');
+  $cpf = trim($_POST['cpf'] ?? '');
+  $senha = trim($_POST['senha'] ?? '');
+  
+  if ($nome && $email && $cpf && $senha) {
+    $erro = $usuarioView->cadastrarUsuario($nome, $email, $cpf, $senha);
+  }
 }
 ?>
 
@@ -84,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </body>
 <script>
-  document.getElementById('cpf').addEventListener('input', function (e) {
+  document.getElementById('cpf').addEventListener('input', function(e) {
     let value = e.target.value.replace(/\D/g, '');
     if (value.length > 11) value = value.slice(0, 11);
     value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -93,4 +109,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     e.target.value = value;
   });
 </script>
+
 </html>
