@@ -38,7 +38,7 @@ if (!isset($_SESSION)) {
         <?php if (isset($_SESSION['usuario_id'])): ?>
           <div class="welcome-container">
             <p>Olá, <?php echo htmlspecialchars($_SESSION['usuario_nome']) ?>!</p>
-            <a href="./auth/logou"><button class="logout-button">Sair</button></a>
+            <a href="./auth/logout.php"><button class="logout-button">Sair</button></a>
           </div>
         <?php else: ?>
           <a href="./auth/login.php"><button class="login-button">Login</button></a>
