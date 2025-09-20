@@ -1,5 +1,5 @@
 <?php
-require_once '../views/UsuarioView.php';
+require_once '../../views/UsuarioView.php';
 
 $erro = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

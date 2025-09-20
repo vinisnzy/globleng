@@ -1,5 +1,5 @@
 <?php
-  require_once('../views/PassagemView.php');
+  require_once '../../views/PassagemView.php';
   $passagemView = new PassagemView();
 ?>
 
@@ -16,9 +16,9 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-  <link rel="stylesheet" href="../assets/css/cidade.css">
-  <link rel="stylesheet" href="../assets/css/carousel.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/cidade.css">
+  <link rel="stylesheet" href="../../assets/css/carousel.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
   <title>Londres</title>
 </head>
 
@@ -29,7 +29,7 @@
         <p>22.184 reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../assets/videos/londres.mp4" type="video/mp4">
+        <source src="../../assets/videos/londres.mp4" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
@@ -60,9 +60,9 @@
       </button>
     </section>
   </main>
-  <?php include_once '../includes/partials/footer.php'; ?>
+  <?php include_once '../../includes/partials/footer.php'; ?>
 </body>
-<script src="../assets/js/carousel.js"></script>
-<script src="../assets/js/list.js"></script>
+<script src="../../assets/js/carousel.js"></script>
+<script src="../../assets/js/list.js"></script>
 
 </html>

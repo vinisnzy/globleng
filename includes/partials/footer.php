@@ -1,14 +1,10 @@
-<?php
-$logo_footer_path = __DIR__ . '';
-?>
-
 <footer class="globleng-footer">
     <div class="footer-left">
         <p>©2025 <strong>Globleng</strong></p>
     </div>
 
     <div class="footer-center">
-        <img src="/globleng/assets/imgs/logo-footer.png" alt="Palmeira" />
+        <img src="../assets/imgs/logo-footer.png" alt="Palmeira" />
     </div>
 
     <div class="footer-right">

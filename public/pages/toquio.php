@@ -1,6 +1,6 @@
 <?php
-  require_once('../views/PassagemView.php');
-  $passagemView = new PassagemView();
+require_once '../../views/PassagemView.php';
+$passagemView = new PassagemView();
 ?>
 
 <!DOCTYPE html>
@@ -16,25 +16,25 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-  <link rel="stylesheet" href="../assets/css/cidade.css">
-  <link rel="stylesheet" href="../assets/css/carousel.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
-  <title>Queenstown</title>
+  <link rel="stylesheet" href="../../assets/css/cidade.css">
+  <link rel="stylesheet" href="../../assets/css/carousel.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <title>Tóquio</title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title">Queenstown, Uma cidade<br> que vai te <br><span>surpreender!</span>
-        <p>1.184 reviews</p>
+      <h1 class="video-title">Tóquio, Uma cidade<br> que vai te <br><span>surpreender!</span>
+        <p>12.184 reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../assets/videos/queenstown.mp4" type="video/mp4">
+        <source src="../../assets/videos/toquio.mp4" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
       <?php
-      $passagemView->listarPassagensPorDestino('Queenstown');
+      $passagemView->listarPassagensPorDestino('Tóquio');
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
@@ -60,9 +60,9 @@
       </button>
     </section>
   </main>
-  <?php include_once '../includes/partials/footer.php'; ?>
+  <?php include_once '../../includes/partials/footer.php'; ?>
 </body>
-<script src="../assets/js/carousel.js"></script>
-<script src="../assets/js/list.js"></script>
+<script src="../../assets/js/carousel.js"></script>
+<script src="../../assets/js/list.js"></script>
 
 </html>

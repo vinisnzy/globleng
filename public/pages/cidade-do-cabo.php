@@ -1,6 +1,6 @@
 <?php
-  require_once('../views/PassagemView.php');
-  $passagemView = new PassagemView();
+require_once '../../views/PassagemView.php';
+$passagemView = new PassagemView();
 ?>
 
 <!DOCTYPE html>
@@ -16,25 +16,25 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-  <link rel="stylesheet" href="../assets/css/cidade.css">
-  <link rel="stylesheet" href="../assets/css/carousel.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
-  <title>Zermatt</title>
+  <link rel="stylesheet" href="../../assets/css/cidade.css">
+  <link rel="stylesheet" href="../../assets/css/carousel.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <title>Cidade do Cabo</title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title">Zermatt, Uma cidade<br> que vai te <br><span>surpreender!</span>
-        <p>10.184 reviews</p>
+      <h1 class="video-title">Cidade do Cabo, Uma cidade<br> que vai te <br><span>surpreender!</span>
+        <p>6.184 reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../assets/videos/zermatt.mp4" type="video/mp4">
+        <source src="../../assets/videos/cidade-do-cabo.mp4" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
       <?php
-      $passagemView->listarPassagensPorDestino('Zermatt');
+      $passagemView->listarPassagensPorDestino('Cidade do Cabo');
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
@@ -60,9 +60,9 @@
       </button>
     </section>
   </main>
-  <?php include_once '../includes/partials/footer.php'; ?>
+  <?php include_once '../../includes/partials/footer.php'; ?>
 </body>
-<script src="../assets/js/carousel.js"></script>
-<script src="../assets/js/list.js"></script>
+<script src="../../assets/js/carousel.js"></script>
+<script src="../../assets/js/list.js"></script>
 
 </html>

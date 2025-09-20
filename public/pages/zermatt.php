@@ -1,6 +1,6 @@
 <?php
-  require_once('../views/PassagemView.php');
-  $passagemView = new PassagemView();
+require_once '../../views/PassagemView.php';
+$passagemView = new PassagemView();
 ?>
 
 <!DOCTYPE html>
@@ -19,22 +19,22 @@
   <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <title>Dubai</title>
+  <title>Zermatt</title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title">Dubai, Uma cidade<br> que vai te <br><span>surpreender!</span>
-        <p>5.184 reviews</p>
+      <h1 class="video-title">Zermatt, Uma cidade<br> que vai te <br><span>surpreender!</span>
+        <p>10.184 reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../assets/videos/dubai.mp4" type="video/mp4">
+        <source src="../../assets/videos/zermatt.mp4" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
       <?php
-      $passagemView->listarPassagensPorDestino('Dubai');
+      $passagemView->listarPassagensPorDestino('Zermatt');
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
@@ -47,11 +47,11 @@
 
       <div class="carousel-container">
         <div class="carousel-track">
-          <img src="../assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
-          <img src="../assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
-          <img src="../assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
-          <img src="../assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
-          <img src="../assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
+          <img src="../../assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
+          <img src="../../assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
+          <img src="../../assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
+          <img src="../../assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
+          <img src="../../assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
         </div>
       </div>
 
@@ -60,7 +60,7 @@
       </button>
     </section>
   </main>
-  <?php include_once '../includes/partials/footer.php'; ?>
+  <?php include_once '../../includes/partials/footer.php'; ?>
 </body>
 <script src="../assets/js/carousel.js"></script>
 <script src="../assets/js/list.js"></script>

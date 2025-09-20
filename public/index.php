@@ -1,6 +1,6 @@
 <?php
-require_once 'views/UsuarioView.php';
-include_once 'views/PassagemView.php';
+require_once '../views/UsuarioView.php';
+include_once '../views/PassagemView.php';
 
 $usuarioView = new UsuarioView();
 $passagemView = new PassagemView();
@@ -225,7 +225,7 @@ if (!isset($_SESSION)) {
       </button>
     </section>
   </main>
-  <?php include_once 'includes/partials/footer.php'; ?>
+  <?php include_once '../includes/partials/footer.php'; ?>
 </body>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/carousel.js"></script>
