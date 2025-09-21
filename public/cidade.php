@@ -1,6 +1,24 @@
 <?php
-require_once '../../views/PassagemView.php';
+require_once '../views/PassagemView.php';
+require_once '../views/CidadeView.php';
 $passagemView = new PassagemView();
+$cidadeView = new CidadeView();
+
+$nome_cidade = ucfirst($_GET['nome']);
+
+if (str_contains($nome_cidade, "-")) {
+  $nome_cidade = str_replace("-", " ", $nome_cidade);
+}
+
+$reviews = $cidadeView->getReviewsPorCidade($nome_cidade);
+
+$nome_video = str_replace(" ", "-", strtolower($nome_cidade));
+
+// Remover acentos
+$nome_video = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_video);
+$nome_video = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_video);
+
+$url_video = "../assets/videos/" . $nome_video . ".mp4";
 ?>
 
 <!DOCTYPE html>
@@ -16,25 +34,25 @@ $passagemView = new PassagemView();
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-  <link rel="stylesheet" href="../../assets/css/cidade.css">
-  <link rel="stylesheet" href="../../assets/css/carousel.css">
-  <link rel="stylesheet" href="../../assets/css/footer.css">
-  <title>Toronto</title>
+  <link rel="stylesheet" href="../assets/css/cidade.css">
+  <link rel="stylesheet" href="../assets/css/carousel.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <title><?php echo htmlspecialchars($nome_cidade) ?></title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title">Toronto, Uma cidade<br> que vai te <br><span>surpreender!</span>
-        <p>8.184 reviews</p>
+      <h1 class="video-title"><?php echo htmlspecialchars($nome_cidade) ?>, Uma cidade<br> que vai te <br><span>surpreender!</span>
+        <p><?php echo htmlspecialchars($reviews) ?> reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="../../assets/videos/toronto.mp4" type="video/mp4">
+        <source src="<?php echo htmlspecialchars($url_video) ?>" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
       <?php
-      $passagemView->listarPassagensPorDestino('Toronto');
+      $passagemView->listarPassagensPorDestino($nome_cidade);
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
@@ -60,9 +78,9 @@ $passagemView = new PassagemView();
       </button>
     </section>
   </main>
-  <?php include_once '../../includes/partials/footer.php'; ?>
+  <?php include_once '../includes/partials/footer.php'; ?>
 </body>
-<script src="../../assets/js/carousel.js"></script>
-<script src="../../assets/js/list.js"></script>
+<script src="../assets/js/carousel.js"></script>
+<script src="../assets/js/list.js"></script>
 
 </html>

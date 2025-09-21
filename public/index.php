@@ -19,10 +19,10 @@ if (!isset($_SESSION)) {
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/index.css">
-  <link rel="stylesheet" href="assets/css/search.css">
-  <link rel="stylesheet" href="assets/css/carousel.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/search.css">
+  <link rel="stylesheet" href="../assets/css/carousel.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
   <title>Globleng</title>
 </head>
 
@@ -30,7 +30,7 @@ if (!isset($_SESSION)) {
   <header>
     <div class="up">
       <div class="logo">
-        <img src="./assets/imgs/logo-globleng.png" alt="Logo" />
+        <img src="../assets/imgs/logo-globleng.png" alt="Logo" />
         <h1>Globleng</h1>
       </div>
       <nav>
@@ -82,10 +82,10 @@ if (!isset($_SESSION)) {
     </div>
     <section id="list" class="destinos-globleng">
       <div class="card-globleng">
-        <img src="./assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
+        <img src="../assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong> R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Toronto')) ?></strong></div>
-          <a href="pages/toronto.php">
+          <a href="cidade.php?nome=toronto">
             <div class="card-vermais">Ver mais</div>  
           </a>
         </div>
@@ -97,10 +97,10 @@ if (!isset($_SESSION)) {
       </div>
 
       <div class="card-globleng">
-        <img src="./assets/imgs/cards/card-toquio.jpg" alt="Tóquio" />
+        <img src="../assets/imgs/cards/card-toquio.jpg" alt="Tóquio" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Tóquio')) ?></strong></div>
-          <a href="pages/toquio.php">
+          <a href="cidade.php?nome=tóquio">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -112,10 +112,10 @@ if (!isset($_SESSION)) {
       </div>
 
       <div class="card-globleng">
-        <img src="./assets/imgs/cards/card-zermatt.jpg" alt="Zermatt" />
+        <img src="../assets/imgs/cards/card-zermatt.jpg" alt="Zermatt" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Zermatt')) ?></strong></div>
-          <a href="pages/zermatt.php">
+          <a href="cidade.php?nome=zermatt">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -127,10 +127,10 @@ if (!isset($_SESSION)) {
       </div>
 
       <div class="card-globleng">
-        <img src="./assets/imgs/cards/card-bariloche.jpg" alt="Bariloche" />
+        <img src="../assets/imgs/cards/card-bariloche.jpg" alt="Bariloche" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Bariloche')) ?></strong></div>
-          <a href="pages/bariloche.php">
+          <a href="cidade.php?nome=bariloche">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -141,10 +141,10 @@ if (!isset($_SESSION)) {
         </div>
       </div>
       <div class="card-globleng oculto">
-        <img src="./assets/imgs/cards/card-londres.jpg" alt="Londres" />
+        <img src="../assets/imgs/cards/card-londres.jpg" alt="Londres" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Londres')) ?></strong></div>
-          <a href="pages/londres.php">
+          <a href="cidade.php?nome=londres">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -157,11 +157,11 @@ if (!isset($_SESSION)) {
 
       <div class="card-globleng oculto">
         <img
-          src="./assets/imgs/cards/card-cidade-do-cabo.jpg"
+          src="../assets/imgs/cards/card-cidade-do-cabo.jpg"
           alt="Cidade do Cabo" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong><?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Cidade do Cabo')) ?></strong></div>
-          <a href="pages/cidade-do-cabo.php">
+          <a href="cidade.php?nome=cidade-do-cabo">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -173,10 +173,10 @@ if (!isset($_SESSION)) {
       </div>
 
       <div class="card-globleng oculto">
-        <img src="./assets/imgs/cards/card-dubai.jpg" alt="Dubai" />
+        <img src="../assets/imgs/cards/card-dubai.jpg" alt="Dubai" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Dubai')) ?></strong></div>
-          <a href="pages/dubai.php">
+          <a href="cidade.php?nome=dubai">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -188,10 +188,10 @@ if (!isset($_SESSION)) {
       </div>
 
       <div class="card-globleng oculto">
-        <img src="./assets/imgs/cards/card-queenstown.jpg" alt="Queenstown" />
+        <img src="../assets/imgs/cards/card-queenstown.jpg" alt="Queenstown" />
         <div class="card-overlay">
           <div class="card-preco">A partir de <strong>R$ <?php echo htmlspecialchars($passagemView->menorPrecoPorDestino('Queenstown')) ?></strong></div>
-          <a href="pages/queenstown.php">
+          <a href="cidade.php?nome=queenstown">
             <div class="card-vermais">Ver mais</div>
           </a>
         </div>
@@ -212,11 +212,11 @@ if (!isset($_SESSION)) {
 
       <div class="carousel-container">
         <div class="carousel-track">
-          <img src="./assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
-          <img src="./assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
-          <img src="./assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
-          <img src="./assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
-          <img src="./assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
+          <img src="../assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
+          <img src="../assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
+          <img src="../assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
+          <img src="../assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
+          <img src="../assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
         </div>
       </div>
 
@@ -227,8 +227,8 @@ if (!isset($_SESSION)) {
   </main>
   <?php include_once '../includes/partials/footer.php'; ?>
 </body>
-<script src="assets/js/index.js"></script>
-<script src="assets/js/carousel.js"></script>
-<script src="assets/js/list.js"></script>
+<script src="../assets/js/index.js"></script>
+<script src="../assets/js/carousel.js"></script>
+<script src="../assets/js/list.js"></script>
 
 </html>
