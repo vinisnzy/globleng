@@ -4,21 +4,21 @@ require_once '../views/CidadeView.php';
 $passagemView = new PassagemView();
 $cidadeView = new CidadeView();
 
-$nome_cidade = ucfirst($_GET['nome']);
+$nome_cidade = $_GET['nome'];
+
+// Remover acentos
+$nome_video_cidade = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_cidade);
+$nome_video_cidade = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_video_cidade);
+
+$url_video = "../assets/videos/" . $nome_video_cidade . ".mp4";
 
 if (str_contains($nome_cidade, "-")) {
   $nome_cidade = str_replace("-", " ", $nome_cidade);
 }
 
+$nome_cidade = ucfirst($nome_cidade);
+
 $reviews = $cidadeView->getReviewsPorCidade($nome_cidade);
-
-$nome_video = str_replace(" ", "-", strtolower($nome_cidade));
-
-// Remover acentos
-$nome_video = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_video);
-$nome_video = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_video);
-
-$url_video = "../assets/videos/" . $nome_video . ".mp4";
 ?>
 
 <!DOCTYPE html>
