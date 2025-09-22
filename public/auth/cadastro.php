@@ -11,11 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = trim($_POST['senha'] ?? '');
     if ($nome && $email && $cpf && $senha) {
         $erro = $usuarioView->cadastrarUsuario($nome, $email, $cpf, $senha);
-        if (!$erro) {
-            exit();
-        }
-    } else {
-        $erro = '';
     }
 }
 ?>

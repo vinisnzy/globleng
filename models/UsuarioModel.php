@@ -14,7 +14,7 @@ final class UsuarioModel
 
     function cadastrarUsuario($nome, $email, $cpf, $senha_hash)
     {
-        $erro = $this->validarCadastro($email, $cpf);
+        $this->validarCadastro($email, $cpf);
         $stmt = $this->connection->prepare("INSERT INTO usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
 
         $stmt->bind_param("ssss", $nome, $email, $cpf, $senha_hash);
@@ -23,14 +23,10 @@ final class UsuarioModel
             throw new Exception("Erro na preparação da query: " . $this->connection->error);
         }
 
-        if (!$erro) {
-            if (!$stmt->execute()) {
-                throw new Exception("Erro ao cadastrar: " . $stmt->error);
-            }
+        if (!$stmt->execute()) {
+            throw new Exception("Erro ao cadastrar: " . $stmt->error);
         }
-
         $stmt->close();
-        return $erro;
     }
 
     function logarUsuario($email, $senha)
@@ -46,26 +42,24 @@ final class UsuarioModel
                 if (!isset($_SESSION)) {
                     session_start();
                 }
-                $primeiro_nome = explode(" ", $usuario['nome'])[0];
-                $_SESSION['usuario_id'] = $usuario['id'];
-                $_SESSION['usuario_nome'] = $primeiro_nome;
+                return $usuario;
             } else {
-                return "Email ou senha incorretos.";
+                throw new Exception("Email ou senha incorretos.");
             }
         } else {
-            return "Email ou senha incorretos.";
+            throw new Exception("Email ou senha incorretos.");
         }
 
         $stmt->close();
     }
 
-    function validarCadastro($email, $cpf)
+    private function validarCadastro($email, $cpf)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return "Email inválido.";
+            throw new Exception("Email inválido.");
         }
         if (!preg_match('/^[0-9]{11}$/', $cpf)) {
-            return "CPF inválido.";
+            throw new Exception("CPF inválido.");
         }
 
         $stmt = $this->connection->prepare("SELECT id FROM usuarios WHERE email = ?");
@@ -73,7 +67,7 @@ final class UsuarioModel
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
-            return "Já existe um cadastro com esse email.";
+            throw new Exception("Já existe um cadastro com esse email.");
         }
 
         $stmt = $this->connection->prepare("SELECT id FROM usuarios WHERE cpf = ?");
@@ -81,10 +75,9 @@ final class UsuarioModel
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
-            return "Já existe um cadastro com esse CPF.";
+            throw new Exception("Já existe um cadastro com esse CPF.");
         }
 
         $stmt->close();
-        return "";
     }
 }

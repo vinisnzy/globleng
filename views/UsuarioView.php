@@ -14,23 +14,27 @@ final class UsuarioView
 
     function cadastrarUsuario($nome, $email, $cpf, $senha)
     {
-        $erro = $this->usuarioController->cadastrarUsuario($nome, $email, $cpf, $senha);
-        if (!$erro) {
-            header('Location: ../auth/login.php');
-            exit();
-        } else {
-            return $erro;
+        try {
+            $this->usuarioController->cadastrarUsuario($nome, $email, $cpf, $senha);
+        } catch (Exception $e) {
+            return $e->getMessage();
         }
+        header('Location: ../auth/login.php');
+        exit();
     }
 
     function logarUsuario($email, $senha)
     {
-        $erro = $this->usuarioController->logarUsuario($email, $senha);
-        if (!$erro) {
-            header('Location: ../index.php');
-            exit();
+        try {
+            $usuario = $this->usuarioController->logarUsuario($email, $senha);
+        } catch (Exception $e) {
+            return $e->getMessage();
         }
-        return $erro;
+        $primeiro_nome = explode(" ", $usuario['nome'])[0];
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_nome'] = $primeiro_nome;
+        header('Location: ../index.php');
+        exit();
     }
 
     function logoutUsuario()

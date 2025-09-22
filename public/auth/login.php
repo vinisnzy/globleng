@@ -4,8 +4,8 @@ require_once '../../views/UsuarioView.php';
 $erro = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioView = new UsuarioView();
-    $email = trim($_POST['email'] ?? '');
-    $senha = trim($_POST['senha'] ?? '');
+    $email = trim($_POST['email']);
+    $senha = trim($_POST['senha']);
     
     if ($email && $senha) {
         $erro = $usuarioView->logarUsuario($email, $senha);
