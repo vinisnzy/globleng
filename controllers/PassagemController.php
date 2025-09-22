@@ -13,12 +13,13 @@ final class PassagemController
 
     function listarPassagensPorDestino($destino)
     {
-        $this->passagemModel->listarPassagensPorDestino($destino);
+        return $this->passagemModel->listarPassagensPorDestino($destino);
     }
 
     function menorPrecoPorDestino($destino)
     {
-        return $this->passagemModel->menorPrecoPorDestino($destino);
+        $menor_preco = $this->passagemModel->menorPrecoPorDestino($destino);
+        return number_format(floor($menor_preco), 0, ",", ".");
     }
 }
 

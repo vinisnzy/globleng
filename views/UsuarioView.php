@@ -30,6 +30,9 @@ final class UsuarioView
         } catch (Exception $e) {
             return $e->getMessage();
         }
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $primeiro_nome = explode(" ", $usuario['nome'])[0];
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nome'] = $primeiro_nome;

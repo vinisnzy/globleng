@@ -13,7 +13,8 @@ final class CidadeController
 
     function getReviewsPorCidade($cidade)
     {
-        return $this->cidadeModel->getReviewsPorCidade($cidade);
+        $reviews = $this->cidadeModel->getReviewsPorCidade($cidade);
+        return number_format(floor($reviews), 0 , "", ".");
     }
 
     function getIdCidadePorNome($nome)

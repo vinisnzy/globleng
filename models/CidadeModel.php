@@ -21,7 +21,7 @@ final class CidadeModel
         $stmt->execute();
         $result = $stmt->get_result();
         $reviews = $result->fetch_assoc();
-        return number_format(floor($reviews['reviews']), 0 , "", ".");
+        return $reviews['reviews'];
     }
 
     function getIdCidadePorNome($nome)
