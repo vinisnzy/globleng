@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `avaliacoes` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
-  `passagem_id` int(11) NOT NULL,
+  `cidade_id` int(11) NOT NULL,
   `nota` int(11) NOT NULL,
   `comentario` text DEFAULT NULL,
   `data_avaliacao` timestamp NOT NULL DEFAULT current_timestamp()
@@ -285,7 +285,7 @@ ALTER TABLE `usuarios`
 -- Restrições para tabelas `avaliacoes`, `compras`, `favoritos` e `passagens`
 --
 ALTER TABLE `avaliacoes`
-  ADD CONSTRAINT `FK_avaliacoes_2` FOREIGN KEY (`passagem_id`) REFERENCES `passagens` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_avaliacoes_2` FOREIGN KEY (`cidade_id`) REFERENCES `cidades` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_avaliacoes_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `compras`
