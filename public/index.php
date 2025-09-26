@@ -212,11 +212,11 @@ if (!isset($_SESSION)) {
 
       <div class="carousel-container">
         <div class="carousel-track">
-          <img src="../assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
-          <img src="../assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
-          <img src="../assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
-          <img src="../assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
-          <img src="../assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
+          <img src="../assets/imgs/carrossel/principal/franca.jpg" alt="Imagem 1" />
+          <img src="../assets/imgs/carrossel/principal/alemanha.jpg" alt="Imagem 2" />
+          <img src="../assets/imgs/carrossel/principal/india.jpg" alt="Imagem 3" />
+          <img src="../assets/imgs/carrossel/principal/brasil.jpg" alt="Imagem 4" />
+          <img src="../assets/imgs/carrossel/principal/maldivas.jpg" alt="Imagem 5" />
         </div>
       </div>
 

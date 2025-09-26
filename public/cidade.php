@@ -7,18 +7,16 @@ $cidadeView = new CidadeView();
 $nome_cidade = $_GET['nome'];
 
 // Remover acentos
-$nome_video_cidade = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_cidade);
-$nome_video_cidade = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_video_cidade);
+$nome_cidade_sem_acentos = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_cidade);
+$nome_cidade_sem_acentos = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_cidade_sem_acentos);
 
-$url_video = "../assets/videos/" . $nome_video_cidade . ".mp4";
+$url_video = "../assets/videos/" . $nome_cidade_sem_acentos . ".mp4";
 
 if (str_contains($nome_cidade, "-")) {
   $nome_cidade = str_replace("-", " ", $nome_cidade);
 }
 
-$nome_cidade = ucfirst($nome_cidade);
-
-$reviews = $cidadeView->getReviewsPorCidade($nome_cidade);
+$reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +35,13 @@ $reviews = $cidadeView->getReviewsPorCidade($nome_cidade);
   <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <title><?php echo htmlspecialchars($nome_cidade) ?></title>
+  <title><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?></title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title"><?php echo htmlspecialchars($nome_cidade) ?>, Uma cidade<br> que vai te <br><span>surpreender!</span>
+      <h1 class="video-title"><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?>, Uma cidade<br> que vai te <br><span>surpreender!</span>
         <p><?php echo htmlspecialchars($reviews) ?> reviews</p>
       </h1>
       <video autoplay muted loop>
@@ -52,31 +50,13 @@ $reviews = $cidadeView->getReviewsPorCidade($nome_cidade);
     </div>
     <ul id="list" class="passes">
       <?php
-      $passagemView->listarPassagensPorDestino($nome_cidade);
+      $passagemView->listarPassagensPorDestino(ucfirst($nome_cidade));
       ?>
     </ul>
     <div class="btn-ver-mais-wrapper">
       <button class="btn-ver-mais">Ver mais...</button>
     </div>
-    <section class="carousel-section">
-      <button class="carousel-btn left">
-        <i class="fa fa-chevron-left"></i>
-      </button>
-
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <img src="../assets/imgs/carrossel/franca-carrossel.jpg" alt="Imagem 1" />
-          <img src="../assets/imgs/carrossel/alemanha-carrossel.jpg" alt="Imagem 2" />
-          <img src="../assets/imgs/carrossel/india-carrossel.jpg" alt="Imagem 3" />
-          <img src="../assets/imgs/carrossel/brasil-carrossel.jpg" alt="Imagem 4" />
-          <img src="../assets/imgs/carrossel/maldivas-carrossel.jpg" alt="Imagem 5" />
-        </div>
-      </div>
-
-      <button class="carousel-btn right">
-        <i class="fa fa-chevron-right"></i>
-      </button>
-    </section>
+    <?php $cidadeView->exibirCarrosselPorCidade($nome_cidade_sem_acentos)?>
   </main>
   <?php include_once '../includes/partials/footer.php'; ?>
 </body>
