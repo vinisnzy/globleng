@@ -35,6 +35,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
   <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/modal.css">
   <title><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?></title>
 </head>
 
@@ -52,6 +53,32 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
       <?php
       $passagemView->listarPassagensPorDestino(ucfirst($nome_cidade));
       ?>
+      <div id="modal-detalhes" class="modal">
+        <span class="close-button">&times;</span>
+        <div class="modal-content">
+            <div class="modal-image"></div>
+            
+            <div class="modal-details">
+                <h2 id="modal-destino-titulo"></h2>
+                <p id="modal-descricao" class="descricao-texto"></p>
+                
+                <div class="modal-info">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  <span id="modal-rota"></span>
+                </div>
+
+                <div class="modal-preco-wrapper">
+                    <span>a partir de</span>
+                    <p id="modal-preco"></p>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-principal">COMPRAR</button>
+                    <a href="#" class="btn-secundario">VER MAIS OPÇÕES</a>
+                </div>
+            </div>
+        </div>
+    </div>
     </ul>
     <div class="btn-ver-mais-wrapper">
       <button class="btn-ver-mais">Ver mais...</button>
@@ -62,5 +89,6 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
 </body>
 <script src="../assets/js/carousel.js"></script>
 <script src="../assets/js/list.js"></script>
+<script src="../assets/js/modal.js"></script>
 
 </html>
