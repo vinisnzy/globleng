@@ -201,8 +201,8 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `senha`) VALUES
 --
 ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uq_usuario_passagem` (`usuario_id`,`passagem_id`),
-  ADD KEY `FK_avaliacoes_2` (`passagem_id`);
+  ADD UNIQUE KEY `uq_usuario_passagem` (`usuario_id`,`cidade_id`),
+  ADD KEY `FK_avaliacoes_2` (`cidade_id`);
 
 --
 -- Índices de tabela `cidades`
