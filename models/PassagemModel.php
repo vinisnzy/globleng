@@ -19,7 +19,7 @@ final class PassagemModel
     {
         $id_cidade_destino = $this->getIdCidadePorNome($destino);
 
-        $query = "SELECT p.check_in, p.check_out, origem.nome AS cidade_origem, p.preco, p.duracao_voo FROM passagens p
+        $query = "SELECT p.id, p.check_in, p.check_out, origem.nome AS cidade_origem, p.preco, p.duracao_voo FROM passagens p
         LEFT JOIN cidades origem ON p.cidade_origem_id = origem.id
         LEFT JOIN cidades destino ON p.cidade_destino_id = destino.id
         WHERE destino.id = ?";
@@ -48,3 +48,4 @@ final class PassagemModel
         return $this->cidadeView->getIdCidadePorNome($nome);
     }
 }
+

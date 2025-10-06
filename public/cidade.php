@@ -33,6 +33,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <link rel="stylesheet" href="../assets/css/cidade.css">
+  <link rel="stylesheet" href="../assets/css/modal.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <title><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?></title>
@@ -56,11 +57,36 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
     <div class="btn-ver-mais-wrapper">
       <button class="btn-ver-mais">Ver mais...</button>
     </div>
+
+    <div id="flightModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <img id="modal-image" src="<?php echo htmlspecialchars("../assets/imgs/cards/card-" . $nome_cidade_sem_acentos . ".jpg") ?>" alt="Imagem do Destino" class="modal-image">
+        <div class="modal-info">
+            <h2 id="modal-destino"></h2>
+            <p id="modal-origem" class="modal-origem"></p>
+            <div class="info-item">
+                <i class="fa-solid fa-plane-departure"></i>
+                <p><strong>Check-in:</strong> <span id="modal-checkin"></span></p>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-plane-arrival"></i>
+                <p><strong>Checkout:</strong> <span id="modal-checkout"></span></p>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <p><strong>Tempo de Voo:</strong> <span id="modal-duracao"></span></p>
+            </div>
+            <a href="#" id="modal-buy-button" class="buy-button">Comprar Passagem</a>
+        </div>
+      </div>
+    </div>
     <?php $cidadeView->exibirCarrosselPorCidade($nome_cidade_sem_acentos)?>
   </main>
   <?php include_once '../includes/partials/footer.php'; ?>
 </body>
 <script src="../assets/js/carousel.js"></script>
 <script src="../assets/js/list.js"></script>
+<script src="../assets/js/modal.js"></script>
 
 </html>
