@@ -35,6 +35,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
   <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/modal.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
+  <link rel="stylesheet" href="../assets/css/avaliacao.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <title><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?></title>
 </head>
@@ -82,6 +83,68 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
       </div>
     </div>
     <?php $cidadeView->exibirCarrosselPorCidade($nome_cidade_sem_acentos)?>
+    <div class="reviews-container">
+    <section class="reviews-section">
+        <h2>O que os viajantes dizem sobre <span><?php echo htmlspecialchars(ucfirst($nome_cidade))?></span></h2>
+        
+        <div class="reviews-list">
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-author">Carla Montenegro</span>
+                    <div class="review-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <p class="review-text">"Simplesmente inesquecível! A arquitetura é de tirar o fôlego e a comida é divina. Recomendo 100%!"</p>
+                <span class="review-date">Postado em 09 de Outubro de 2025</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-author">Rafael Borges</span>
+                    <div class="review-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9734;</span>
+                    </div>
+                </div>
+                <p class="review-text">"Ótima cidade para passear. O transporte público poderia ser um pouco melhor, mas os pontos turísticos compensam."</p>
+                <span class="review-date">Postado em 07 de Outubro de 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-form-section">
+        <h3>Deixe sua Avaliação</h3>
+        <form id="review-form" class="review-form">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required placeholder="Ex: João Silva">
+            </div>
+            <div class="form-group">
+                <label>Nota</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required/><label for="star5" title="5 estrelas">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 estrelas">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 estrelas">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 estrelas">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 estrela">&#9733;</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="review">Comentário</label>
+                <textarea id="review" name="review" rows="5" required placeholder="Escreva aqui o que você achou da cidade..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Avaliação</button>
+        </form>
+    </section>
+</div>
   </main>
   <?php include_once '../includes/partials/footer.php'; ?>
 </body>
