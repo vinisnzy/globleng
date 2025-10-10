@@ -1,6 +1,8 @@
 <?php
 require_once '../views/PassagemView.php';
 require_once '../views/CidadeView.php';
+require_once '../views/AvaliacaoView.php';
+$avaliacaoView = new AvaliacaoView();
 $passagemView = new PassagemView();
 $cidadeView = new CidadeView();
 
@@ -37,17 +39,17 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/avaliacao.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <title><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?></title>
+  <title><?= htmlspecialchars(ucfirst($nome_cidade)) ?></title>
 </head>
 
 <body>
   <main>
     <div class="video-container">
-      <h1 class="video-title"><?php echo htmlspecialchars(ucfirst($nome_cidade)) ?>, Uma cidade<br> que vai te <br><span>surpreender!</span>
-        <p><?php echo htmlspecialchars($reviews) ?> reviews</p>
+      <h1 class="video-title"><?= htmlspecialchars(ucfirst($nome_cidade)) ?>, Uma cidade<br> que vai te <br><span>surpreender!</span>
+        <p><?= htmlspecialchars($reviews) ?> reviews</p>
       </h1>
       <video autoplay muted loop>
-        <source src="<?php echo htmlspecialchars($url_video) ?>" type="video/mp4">
+        <source src="<?= htmlspecialchars($url_video) ?>" type="video/mp4">
       </video>
     </div>
     <ul id="list" class="passes">
@@ -62,7 +64,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
     <div id="flightModal" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
-        <img id="modal-image" src="<?php echo htmlspecialchars("../assets/imgs/cards/card-" . $nome_cidade_sem_acentos . ".jpg") ?>" alt="Imagem do Destino" class="modal-image">
+        <img id="modal-image" src="<?= htmlspecialchars("../assets/imgs/cards/card-" . $nome_cidade_sem_acentos . ".jpg") ?>" alt="Imagem do Destino" class="modal-image">
         <div class="modal-info">
             <h2 id="modal-destino"></h2>
             <p id="modal-origem" class="modal-origem"></p>
@@ -85,38 +87,10 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
     <?php $cidadeView->exibirCarrosselPorCidade($nome_cidade_sem_acentos)?>
     <div class="reviews-container">
     <section class="reviews-section">
-        <h2>O que os viajantes dizem sobre <span><?php echo htmlspecialchars(ucfirst($nome_cidade))?></span></h2>
+        <h2>O que os viajantes dizem sobre <span><?= htmlspecialchars(ucfirst($nome_cidade))?></span></h2>
         
         <div class="reviews-list">
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-author">Carla Montenegro</span>
-                    <div class="review-rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                    </div>
-                </div>
-                <p class="review-text">"Simplesmente inesquecível! A arquitetura é de tirar o fôlego e a comida é divina. Recomendo 100%!"</p>
-                <span class="review-date">Postado em 09 de Outubro de 2025</span>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-author">Rafael Borges</span>
-                    <div class="review-rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                </div>
-                <p class="review-text">"Ótima cidade para passear. O transporte público poderia ser um pouco melhor, mas os pontos turísticos compensam."</p>
-                <span class="review-date">Postado em 07 de Outubro de 2025</span>
-            </div>
+          <?php $avaliacaoView->getAvaliacoesPorCidade(ucfirst($nome_cidade)) ?>
         </div>
     </section>
 

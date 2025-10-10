@@ -15,7 +15,6 @@ final class CidadeModel
 
     function getReviewsPorCidade($cidade)
     {
-        $id_cidade = $this->getIdCidadePorNome($cidade);
         $stmt = $this->connection->prepare("SELECT reviews FROM cidades WHERE nome = ?");
         $stmt->bind_param("s", $cidade);
         $stmt->execute();
