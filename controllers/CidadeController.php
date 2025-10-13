@@ -21,4 +21,9 @@ final class CidadeController
     {
         return $this->cidadeModel->getIdCidadePorNome($nome);
     }
+
+    function getNomeCidadePorId($id)
+    {
+        return $this->cidadeModel->getNomeCidadePorId($id);
+    }
 }

@@ -2,11 +2,23 @@
 require_once '../views/PassagemView.php';
 require_once '../views/CidadeView.php';
 require_once '../views/AvaliacaoView.php';
+
 $avaliacaoView = new AvaliacaoView();
 $passagemView = new PassagemView();
 $cidadeView = new CidadeView();
 
 $nome_cidade = $_GET['nome'];
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  session_start();
+  if (!isset($_SESSION['usuario_id'])) {
+    header("Location: auth/login.php");
+  }
+  $cidade_id = $cidadeView->getIdCidadePorNome(ucfirst($nome_cidade));
+  $nota = $_POST['rating'];
+  $comentario = $_POST['review'];
+  $avaliacaoView->inserirAvaliacao($_SESSION['usuario_id'], $cidade_id, $nota, $comentario);
+}
 
 // Remover acentos
 $nome_cidade_sem_acentos = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_cidade);
@@ -34,6 +46,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
   <link rel="stylesheet" href="../assets/css/cidade.css">
   <link rel="stylesheet" href="../assets/css/modal.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
@@ -85,7 +98,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
       </div>
     </div>
     <?php $cidadeView->exibirCarrosselPorCidade($nome_cidade_sem_acentos)?>
-    <div class="reviews-container">
+    <div class="reviews-container" id="reviews">
     <section class="reviews-section">
         <h2>O que os viajantes dizem sobre <span><?= htmlspecialchars(ucfirst($nome_cidade))?></span></h2>
         
@@ -96,11 +109,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
 
     <section class="review-form-section">
         <h3>Deixe sua Avaliação</h3>
-        <form id="review-form" class="review-form">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" required placeholder="Ex: João Silva">
-            </div>
+        <form id="review-form" class="review-form" action=<?= htmlspecialchars("cidade.php?nome={$nome_cidade}#reviews")?> method="POST">
             <div class="form-group">
                 <label>Nota</label>
                 <div class="star-rating">
@@ -125,5 +134,7 @@ $reviews = $cidadeView->getReviewsPorCidade(ucfirst($nome_cidade));
 <script src="../assets/js/carousel.js"></script>
 <script src="../assets/js/list.js"></script>
 <script src="../assets/js/modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+<script src="../assets/js/notifications.js"></script>
 
 </html>

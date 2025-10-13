@@ -14,6 +14,11 @@ final class AvaliacaoController
     function getAvaliacoesPorCidade($cidade) {
         return $this->avaliacaoModel->getAvaliacoesPorCidade($cidade);
     }
+
+    function inserirAvaliacao($usuario_id, $cidade_id, $nota, $comentario) {
+        $comentario = trim($comentario);
+        return $this->avaliacaoModel->inserirAvaliacao($usuario_id, $cidade_id, $nota, $comentario);
+    }
 }
 
 ?>

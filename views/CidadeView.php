@@ -21,6 +21,10 @@ final class CidadeView
         return $this->cidadeController->getIdCidadePorNome($nome);
     }
 
+    function getNomeCidadePorId($id) {
+        return $this->cidadeController->getNomeCidadePorId($id);
+    }
+
     function exibirCarrosselPorCidade($cidade)
     {
         echo "<section class=\"carousel-section\">";

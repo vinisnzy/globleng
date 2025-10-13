@@ -32,4 +32,14 @@ final class CidadeModel
         $cidade = $result->fetch_assoc();
         return $cidade['id'];
     }
+
+    function getNomeCidadePorId($id)
+    {
+        $stmt = $this->connection->prepare("SELECT nome FROM cidades WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cidade = $result->fetch_assoc();
+        return $cidade['nome'];
+    }
 }
