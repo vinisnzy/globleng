@@ -4,7 +4,7 @@
 .reviews-container {    
     width: 75%;
     margin: 60px auto 80px auto;
-    background-color: var(--bg); /* Fundo branco como seus cards */
+    background-color: var(--bg);
     padding: 30px 40px;
     border-radius: 16px; /* Mesmo border-radius dos seus cards */
 }
@@ -67,19 +67,23 @@
 
 /* --- Seção do Formulário --- */
 .review-form-section {
+    background-image: url('../imgs/bg-review.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    border-top: 2px solid #555;
     padding-top: 40px;
+    box-shadow: 0px 3px 15px 2px rgba(0, 0, 0, 0.50);
+    border-radius: 20px;
 }
 
 .review-form-section h3 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 30px;
-    color: var(--brown);
+    color: var(--bg);
     font-weight: bold;
 }
 
@@ -94,6 +98,7 @@
 
 .form-group label {
     display: block;
+    color: var(--white);
     margin-bottom: 8px;
     font-weight: bold;
     font-size: 14px;
@@ -103,11 +108,14 @@
 .form-group textarea {
     width: 100%;
     padding: 12px;
+    background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-family: inherit;
     font-size: 16px;
+    box-shadow: 0px 2px 1px 1px rgba(56, 56, 56, 0.25);
     transition: border-color 0.3s, box-shadow 0.3s;
+
 }
 
 .form-group input[type="text"]:focus,
@@ -133,7 +141,7 @@
     cursor: pointer;
     transition: 0.3s;
     display: block; /* Para permitir centralização com margin auto */
-    margin: 20px auto 0 auto;
+    margin: 20px auto 40px auto;
 }
 
 .submit-btn:hover {
