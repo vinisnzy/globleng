@@ -1,0 +1,233 @@
+@import url('variables.css');
+
+main {
+    width: 100%;
+    background-color: var(--bg);
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+}
+
+/* Estilo de card genérico baseado na sua classe .pass */
+.card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    font-size: 20pt;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+/* Estilos específicos para o resumo da viagem */
+.resumo-viagem {
+    flex: 1;
+    min-width: 350px;
+}
+
+.resumo-viagem .destino-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.resumo-viagem .destino-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.resumo-viagem .destino-header h3 {
+    font-size: 18pt;
+    font-weight: 500;
+}
+
+.resumo-viagem .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12pt;
+}
+
+.resumo-viagem .info-item i {
+    font-size: 16pt;
+    color: var(--green);
+    width: 30px;
+    margin-right: 15px;
+}
+
+.resumo-viagem hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+}
+
+.resumo-viagem .total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16pt;
+}
+
+.resumo-viagem .total-price strong {
+    font-weight: bold;
+    color: var(--green);
+}
+
+
+/* Estilos específicos para o formulário de pagamento */
+.form-pagamento {
+    flex: 1.2;
+    min-width: 350px;
+}
+
+.form-pagamento .card-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 32px;
+    color: #a4a4a4;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 11pt;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 12pt;
+    font-family: "Poppins", sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Estilo do botão de pagamento baseado na sua classe .btn-ver-mais */
+.btn-pagar {
+    background-color: var(--green);
+    border: 2px solid var(--green);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-pagar:hover {
+    background-color: #27ae60; /* Um tom de verde um pouco mais escuro */
+    border-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.oculto {
+    display: none;
+}
+
+.visivel {
+    display: block;
+}
+
+.form-etapas {
+    flex: 1.2;
+    min-width: 350px;
+}
+
+/* Estilo para o indicador de etapa */
+.step-indicator {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Estilo para o botão "Voltar", inspirado no .btn-ver-mais */
+.btn-voltar {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    color: var(--green);
+    padding: 15px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px; /* Espaço entre os botões */
+}
+
+.btn-voltar:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 860px) {
+    .payment-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
