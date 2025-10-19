@@ -25,6 +25,41 @@ final class PassagemModel
         return $result->fetch_assoc();
     }
 
+    function getPassagensPorPesquisa($destino, $check_in, $check_out)
+    {
+        $check_in = explode("/", $check_in);
+        $check_out = explode("/", $check_out);
+
+        $check_in = $check_in[2] . "-" . $check_in[1] . "-" . $check_in[0];
+        $check_out = $check_out[2] . "-" . $check_out[1] . "-" . $check_out[0];
+
+        $stmt = $this->connection->prepare("SELECT 
+                p.id,
+                destino.nome AS destino,
+                origem.nome AS origem,
+                p.check_in,
+                p.check_out,
+                p.duracao_voo,
+                p.preco,
+                (
+                    (CASE WHEN DATE(p.check_in) = DATE(?) THEN 1 ELSE 0 END) * 2 +
+                    (CASE WHEN DATE(p.check_out) = DATE(?) THEN 1 ELSE 0 END) * 2
+                ) AS score
+            FROM passagens p
+            LEFT JOIN cidades destino 
+                ON p.cidade_destino_id = destino.id
+            LEFT JOIN cidades origem 
+                ON p.cidade_origem_id = origem.id
+            WHERE destino.nome LIKE CONCAT('%', ?, '%')
+            ORDER BY score DESC, p.preco ASC
+            LIMIT 10;
+            ");
+        $stmt->bind_param("sss", $check_in, $check_out, $destino);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     function listarPassagensPorDestino($destino)
     {
         $id_cidade_destino = $this->getIdCidadePorNome($destino);

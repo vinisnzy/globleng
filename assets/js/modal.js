@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('flightModal');
     const closeButton = document.querySelector('.close-button');
-    const passagens = document.querySelectorAll('.pass');
+    const passagens = document.querySelectorAll('.open-modal');
 
     const openModal = (data) => {
         document.getElementById('modal-destino').textContent = data.destino;

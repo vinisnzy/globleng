@@ -16,6 +16,11 @@ final class PassagemController
         return $this->passagemModel->getPassagemPorId($id);
     }
 
+    function getPassagensPorPesquisa($destino, $check_in, $check_out)
+    {
+        return $this->passagemModel->getPassagensPorPesquisa($destino, $check_in, $check_out);
+    }
+
     function listarPassagensPorDestino($destino)
     {
         return $this->passagemModel->listarPassagensPorDestino($destino);

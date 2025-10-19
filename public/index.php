@@ -20,7 +20,7 @@ if (!isset($_SESSION)) {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../assets/css/index.css">
-  <link rel="stylesheet" href="../assets/css/search.css">
+  <link rel="stylesheet" href="../assets/css/search-session.css">
   <link rel="stylesheet" href="../assets/css/carousel.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <title>Globleng</title>
@@ -51,35 +51,41 @@ if (!isset($_SESSION)) {
     </div>
   </header>
   <main>
-    <div id="search" class="search">
+    <form id="search" class="search" action="pesquisa.php" method="POST">
       <div class="search-container">
         <div class="search-top">
           <i class="fa fa-search"></i>
-          <input type="text" placeholder="Qual seu próximo destino?" />
+          <input type="text" placeholder="Qual seu próximo destino?" name="destino" required/>
         </div>
 
         <div class="search-bottom">
           <div class="search-field">
             <i class="fa fa-calendar"></i>
             <input
-              id="date-input"
+              class="date-input"
               type="text"
-              placeholder="check-in/out"
-              maxlength="23" />
+              placeholder="check-in"
+              name="check-in"
+              maxlength="10"
+              required />
           </div>
 
           <div class="divider"></div>
 
           <div class="search-field">
-            <i class="fa fa-user"></i>
+            <i class="fa fa-calendar"></i>
             <input
-              id="guests-input"
+              class="date-input"
               type="text"
-              placeholder="qntd. passageiros" />
+              placeholder="check-out"
+              name="check-out"
+              maxlength="10"
+              required />
           </div>
         </div>
       </div>
-    </div>
+      <button type="submit" class="search-button">Pesquisar</button>
+    </form>
     <section id="list" class="destinos-globleng">
       <div class="card-globleng">
         <img src="../assets/imgs/cards/card-toronto.jpg" alt="Toronto" />
@@ -227,7 +233,7 @@ if (!isset($_SESSION)) {
   </main>
   <?php include_once '../includes/partials/footer.php'; ?>
 </body>
-<script src="../assets/js/index.js"></script>
+<script src="../assets/js/search.js"></script>
 <script src="../assets/js/carousel.js"></script>
 <script src="../assets/js/list.js"></script>
 

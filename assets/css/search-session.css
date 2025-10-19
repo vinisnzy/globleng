@@ -73,3 +73,22 @@ main .search {
     width: 1px;
     background: #ccc;
 }
+
+.search-button {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 15px 80px;
+    border: var(--white);
+    border-radius: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "DM Sans", sans-serif;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--dark-green);
+}

@@ -16,6 +16,10 @@ final class PassagemView
         return $this->passagemController->getPassagemPorId($id);
     }
 
+    function getPassagensPorPesquisa($destino, $check_in, $check_out)
+    {
+        return $this->passagemController->getPassagensPorPesquisa($destino, $check_in, $check_out);
+    }
 
     function listarPassagensPorDestino($destino)
     {
@@ -32,7 +36,7 @@ final class PassagemView
             $preco = number_format($passagem['preco'], 2, ',', '.');
             $id_passagem = $passagem['id'];
 
-            $passagem = "<li class=\"pass";
+            $passagem = "<li class=\"pass open-modal";
             if ($count > 3) {
                 $passagem .= " oculto";
             }
