@@ -3,7 +3,6 @@
 main {
     width: 100%;
     background-color: var(--bg);
-    font-family: "Poppins", sans-serif;
     color: #333;
     display: flex;
     justify-content: center;
@@ -65,7 +64,7 @@ main {
 
 .resumo-viagem .destino-header h3 {
     font-size: 18pt;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .resumo-viagem .info-item {

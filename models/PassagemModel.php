@@ -15,6 +15,16 @@ final class PassagemModel
         $this->cidadeView = new CidadeView();
     }
 
+    function getPassagemPorId($id)
+    {
+        $stmt = $this->connection->prepare("SELECT p.duracao_voo, p.check_in, p.check_out, p.preco, origem.nome AS cidade_origem, destino.nome AS cidade_destino FROM passagens p LEFT JOIN cidades origem ON p.cidade_origem_id = origem.id LEFT JOIN cidades destino ON p.cidade_destino_id = destino.id WHERE p.id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        return $result->fetch_assoc();
+    }
+
     function listarPassagensPorDestino($destino)
     {
         $id_cidade_destino = $this->getIdCidadePorNome($destino);

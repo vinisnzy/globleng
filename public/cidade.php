@@ -2,6 +2,7 @@
 require_once '../views/PassagemView.php';
 require_once '../views/CidadeView.php';
 require_once '../views/AvaliacaoView.php';
+require_once '../utils/formatStrings.php';
 
 $avaliacaoView = new AvaliacaoView();
 $passagemView = new PassagemView();
@@ -20,9 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $avaliacaoView->inserirAvaliacao($_SESSION['usuario_id'], $cidade_id, $nota, $comentario);
 }
 
-// Remover acentos
-$nome_cidade_sem_acentos = iconv('UTF-8', 'ASCII//TRANSLIT', $nome_cidade);
-$nome_cidade_sem_acentos = preg_replace('/[^A-Za-z0-9\s\-]/', '', $nome_cidade_sem_acentos);
+$nome_cidade_sem_acentos = removerAcentos($nome_cidade);
 
 $url_video = "../assets/videos/" . $nome_cidade_sem_acentos . ".mp4";
 

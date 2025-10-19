@@ -11,6 +11,11 @@ final class PassagemController
         $this->passagemModel = new PassagemModel();
     }
 
+    function getPassagemPorId($id)
+    {
+        return $this->passagemModel->getPassagemPorId($id);
+    }
+
     function listarPassagensPorDestino($destino)
     {
         return $this->passagemModel->listarPassagensPorDestino($destino);

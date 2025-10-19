@@ -1,3 +1,21 @@
+<?php
+
+require_once "../views/PassagemView.php";
+require_once "../views/UsuarioView.php";
+require_once "../utils/formatStrings.php";
+
+$passagemView = new PassagemView();
+$usuarioView = new UsuarioView();
+
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+$passagem_id = $_GET['id'];
+$passagem = $passagemView->getPassagemPorId($passagem_id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -74,25 +92,25 @@
             <div class="card resumo-viagem">
                 <h2>Resumo da sua Viagem</h2>
                 <div class="destino-header">
-                    <img src="../assets/imgs/cards/card-cidade-do-cabo.jpg" alt="Imagem do Destino">
-                    <h3>Rio de Janeiro</h3>
+                    <img src="<?= htmlspecialchars("../assets/imgs/cards/card-" . removerAcentos($passagem['cidade_destino']) . ".jpg") ?>" alt="Imagem do Destino">
+                    <h3><?= htmlspecialchars($passagem['cidade_destino']) ?></h3>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-plane-departure"></i>
-                    <p><strong>Origem:</strong> São Paulo (GRU)</p>
+                    <p><strong>Origem: </strong><?= htmlspecialchars($passagem['cidade_origem']) ?></p>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-calendar-check"></i>
-                    <p><strong>Check-in:</strong> 25/12/2025</p>
+                    <p><strong>Check-in: </strong><?= htmlspecialchars(formatDate($passagem['check_in']))?></p>
                 </div>
                  <div class="info-item">
                     <i class="fa-solid fa-clock"></i>
-                    <p><strong>Tempo de Voo:</strong> 1h 05min</p>
+                    <p><strong>Tempo de Voo: </strong><?= htmlspecialchars(formatTime($passagem['duracao_voo'])) ?></p>
                 </div>
                 <hr>
                 <div class="total-price">
                     <span>Total</span>
-                    <strong>R$ 1.250,00</strong>
+                    <strong>R$ <?= formatPrice($passagem['preco']) ?></strong>
                 </div>
             </div>
         </div>
