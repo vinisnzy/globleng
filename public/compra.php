@@ -14,31 +14,6 @@
 <body>
     <main>
         <div class="payment-container">
-            <div class="card resumo-viagem">
-                <h2>Resumo da sua Viagem</h2>
-                <div class="destino-header">
-                    <img src="../assets/imgs/cards/card-cidade-do-cabo.jpg" alt="Imagem do Destino">
-                    <h3>Rio de Janeiro</h3>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-plane-departure"></i>
-                    <p><strong>Origem:</strong> São Paulo (GRU)</p>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <p><strong>Check-in:</strong> 25/12/2025</p>
-                </div>
-                 <div class="info-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <p><strong>Tempo de Voo:</strong> 1h 05min</p>
-                </div>
-                <hr>
-                <div class="total-price">
-                    <span>Total</span>
-                    <strong>R$ 1.250,00</strong>
-                </div>
-            </div>
-
             <div class="form-etapas">
                 <div id="dados-cliente" class="card form-pagamento visivel">
                     <div class="step-indicator">Etapa 1 de 2: Seus Dados</div>
@@ -93,6 +68,31 @@
                         <button type="button" id="btn-voltar" class="btn-voltar">Voltar e editar dados</button>
                         <button type="submit" class="btn-pagar">Finalizar Pagamento</button>
                     </form>
+                </div>
+            </div>
+
+            <div class="card resumo-viagem">
+                <h2>Resumo da sua Viagem</h2>
+                <div class="destino-header">
+                    <img src="../assets/imgs/cards/card-cidade-do-cabo.jpg" alt="Imagem do Destino">
+                    <h3>Rio de Janeiro</h3>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <p><strong>Origem:</strong> São Paulo (GRU)</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p><strong>Check-in:</strong> 25/12/2025</p>
+                </div>
+                 <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <p><strong>Tempo de Voo:</strong> 1h 05min</p>
+                </div>
+                <hr>
+                <div class="total-price">
+                    <span>Total</span>
+                    <strong>R$ 1.250,00</strong>
                 </div>
             </div>
         </div>
