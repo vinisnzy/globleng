@@ -37,3 +37,86 @@
 .footer-right a:hover {
   color: #f0c05a;
 }
+
+/* Breakpoint para Tablets */
+@media (max-width: 1024px) {
+  .globleng-footer {
+    padding: 25px 40px;
+    font-size: 22pt;
+  }
+
+  .footer-left p {
+    font-size: 16pt;
+  }
+
+  .footer-left strong {
+    font-size: 26pt;
+  }
+
+  .footer-center img {
+    height: 250px; 
+    margin: 0; 
+  }
+
+  .footer-right a {
+    font-size: 22pt;
+    margin-left: 30px;
+  }
+}
+
+/* Breakpoint para Celulares (ex: <= 768px) */
+@media (max-width: 768px) {
+  .globleng-footer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center; 
+  }
+
+  .footer-center img {
+    height: 180px;
+    margin: 0;
+  }
+
+  .footer-left p {
+    font-size: 14pt;
+  }
+
+  .footer-left strong {
+    font-size: 22pt;
+  }
+
+  .footer-right {
+    margin-right: 0;
+  }
+
+  .footer-right a {
+    font-size: 20pt;
+    margin-left: 20px;
+    margin-right: 20px; 
+  }
+}
+
+/* Breakpoint para Celulares Pequenos */
+@media (max-width: 480px) {
+  .globleng-footer {
+    gap: 25px; 
+  }
+
+  .footer-center img {
+    height: 150px;
+  }
+
+  .footer-left p {
+    font-size: 13pt;
+  }
+
+  .footer-left strong {
+    font-size: 19pt;
+  }
+
+  .footer-right a {
+    font-size: 18pt;
+    margin: 0 15px; 
+  }
+}

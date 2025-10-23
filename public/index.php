@@ -1,6 +1,6 @@
 <?php
 require_once '../views/UsuarioView.php';
-include_once '../views/PassagemView.php';
+require_once '../views/PassagemView.php';
 
 $usuarioView = new UsuarioView();
 $passagemView = new PassagemView();
@@ -218,11 +218,11 @@ if (!isset($_SESSION)) {
 
       <div class="carousel-container">
         <div class="carousel-track">
-          <img src="../assets/imgs/carrossel/principal/franca.jpg" alt="Imagem 1" />
-          <img src="../assets/imgs/carrossel/principal/alemanha.jpg" alt="Imagem 2" />
-          <img src="../assets/imgs/carrossel/principal/india.jpg" alt="Imagem 3" />
-          <img src="../assets/imgs/carrossel/principal/brasil.jpg" alt="Imagem 4" />
-          <img src="../assets/imgs/carrossel/principal/maldivas.jpg" alt="Imagem 5" />
+          <a href="cidade.php?nome=tóquio"><img src="../assets/imgs/carrossel/toquio/toquio1.jpg" alt="Imagem 1" /></a>
+          <a href="cidade.php?nome=bariloche"><img src="../assets/imgs/carrossel/bariloche/bariloche1.jpg" alt="Imagem 2" /></a>
+          <a href="cidade.php?nome=dubai"><img src="../assets/imgs/carrossel/dubai/dubai1.jpg" alt="Imagem 3" /></a>
+          <a href="cidade.php?nome=londres"><img src="../assets/imgs/carrossel/londres/londres1.jpg" alt="Imagem 4" /></a>
+          <a href="cidade.php?nome=queenstown"><img src="../assets/imgs/carrossel/queenstown/queenstown1.jpg" alt="Imagem 5" /></a>
         </div>
       </div>
 

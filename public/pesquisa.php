@@ -55,7 +55,13 @@ $passagens = $passagemView->getPassagensPorPesquisa($destino, $check_in, $check_
   </header>
 
     <main>
-        <div class="destinos-globleng">
+            <?php if (empty($passagens)): ?>
+                <div class="none-pass-content">
+                    <h2 class="none-pass-text">Ops... Não encontramos a sua passagem, estamos trabalhando nisso!</h2>
+                    <a class="return-to-index-button" href="index.php">Voltar ao início</a>
+                </div>
+            <?php endif; ?>
+            <div class="destinos-globleng">
             <?php foreach ($passagens as $passagem): ?>
             <article class="card-globleng">
                 <a href="#"

@@ -147,6 +147,32 @@ main {
     z-index: 10;
 }
 
+.none-pass-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.none-pass-text {
+    text-align: center;
+}
+
+.return-to-index-button {
+    margin-top: 30px;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.return-to-index-button:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.05);
+}
+
 .card-globleng {
     background-color: #fff;
     border-radius: 16px;

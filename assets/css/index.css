@@ -1,63 +1,63 @@
-@import url('variables.css');
+@import url("variables.css");
 
 body {
-    background-color: var(--bg);
-    color: var(--brown);
+  background-color: var(--bg);
+  color: var(--brown);
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 header .up {
-    display: flex;
-    padding: 20px 0;
-    justify-content: space-between;
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 60px;
 }
 
 .logo img {
-    width: 60px;
-    height: 100px;
+  width: 60px;
+  height: 100px;
 }
 
 .logo h1 {
-    font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-right: 60px;
 }
 
 .welcome-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 16pt;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16pt;
+  font-weight: bold;
 }
 
 .welcome-container p {
-    margin-top: 15px;
-    cursor: pointer;
+  margin-top: 15px;
+  cursor: pointer;
 }
 .welcome-container a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
 }
 
 .logout-button {
@@ -83,185 +83,306 @@ nav {
 }
 
 .login-button {
-    font-size: 12pt;
-    border: none;
-    padding: 10px 35px 10px 35px;
-    border-radius: 15px;
-    background-color: var(--green);
-    color: var(--white);
-    cursor: pointer;
-    transition: 0.3s;
+  font-size: 12pt;
+  border: none;
+  padding: 10px 35px 10px 35px;
+  border-radius: 15px;
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .login-button:hover {
-    background-color: var(--dark-green);
+  background-color: var(--dark-green);
 }
 
 nav .link-search {
-    color: var(--brown);
-    font-size: 16pt;
+  color: var(--brown);
+  font-size: 16pt;
 }
 
 header .down {
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
 .down h2 {
-    width: 800px;
-    font-size: 50pt;
+  width: 800px;
+  font-size: 50pt;
 }
 
 .down h2 span {
-    color: var(--green);
+  color: var(--green);
 }
 
 .down p {
-    font-size: 16pt;
+  font-size: 16pt;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .destinos-globleng {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    justify-content: center;
-    margin: -40px auto 80px auto;
-    width: 90%;
-    max-width: 1000px;
-    position: relative;
-    z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  justify-content: center;
+  margin: -40px auto 80px auto;
+  width: 90%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 10;
 }
 
 .card-globleng {
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    width: 100%;
-    position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .card-globleng img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: #ccc;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: #ccc;
 }
 
 .card-overlay {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
 .card-preco {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .card-globleng a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-vermais {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 24px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .card-vermais:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .card-info {
-    padding: 20px;
+  padding: 20px;
 }
 
 .card-info h3 {
-    margin-bottom: 6px;
-    font-size: 22px;
+  margin-bottom: 6px;
+  font-size: 22px;
 }
 
 .card-info p {
-    font-size: 16px;
-    color: #777;
+  font-size: 16px;
+  color: #777;
 }
 
 .card-avaliacao {
-    margin-top: 12px;
-    color: #f29423;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 16px;
+  margin-top: 12px;
+  color: #f29423;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .oculto {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .visivel {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card-globleng:nth-child(1),
 .card-globleng:nth-child(2) {
-    z-index: 5;
+  z-index: 5;
 }
 
 .btn-ver-mais-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .btn-ver-mais {
-    background-color: transparent;
-    border: 2px solid var(--green);
-    color: var(--green);
-    padding: 12px 15%;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent;
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 12px 15%;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-ver-mais:hover {
-    background-color: var(--green);
-    color: white;
+  background-color: var(--green);
+  color: white;
 }
 
+@media (max-width: 1024px) {
+  /* --- Header --- */
+  .logo {
+    margin-left: 30px; /* Reduz margem lateral */
+  }
+  nav {
+    margin-right: 30px; /* Reduz margem lateral */
+    gap: 25px; /* Reduz espaço entre itens da nav */
+  }
+
+  .link-search {
+    display: none;
+  }
+
+  /* --- Título Principal --- */
+  header .down {
+    margin-left: 50px; /* Reduz margem */
+    margin-top: 30px;
+  }
+  .down h2 {
+    width: auto; /* Remove a largura fixa! */
+    max-width: 90%; /* Limita a largura */
+    font-size: 40pt; /* Reduz um pouco a fonte */
+  }
+
+  /* --- Carrossel --- */
+  .carousel-track img {
+    height: 350px; /* Altura menor para tablets */
+  }
+}
+
+/* Breakpoint para celulares (modificando o seu existente) */
 @media (max-width: 768px) {
-    .destinos-globleng {
-        grid-template-columns: 1fr;
-    }
+  /* --- Header --- */
+  header .up {
+    align-items: center; /* Centraliza os itens empilhados */
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .destinos-globleng {
+    grid-template-columns: 1fr;
+  }
+
+  .logo img {
+    width: 45px; /* Reduz o tamanho do logo */
+    height: 75px;
+  }
+
+  .logo h1 {
+    font-size: 16pt;
+  }
+
+  .welcome-container {
+    font-size: 14pt; /* Reduz fonte do "Olá" */
+  }
+
+  .login-button {
+    font-size: 11pt;
+    padding: 8px 25px;
+  }
+
+  /* --- Título Principal --- */
+  header .down {
+    margin-left: 0; /* Remove margem */
+    margin-top: 20px;
+    padding: 0 20px; /* Adiciona padding lateral para não colar nas bordas */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .down h2 {
+    font-size: 28pt; /* Reduz drasticamente a fonte */
+    max-width: 100%; /* Garante que ocupe o espaço (com padding) */
+  }
+
+  /* --- Carrossel --- */
+  .carousel-section {
+    width: 100%; /* Carrossel ocupa a largura total */
+    margin: 30px auto;
+  }
+
+  .carousel-container {
+    border-radius: 0; /* Remove bordas arredondadas no mobile (opcional) */
+  }
+
+  .carousel-track img {
+    height: 300px; /* Altura menor para celulares */
+  }
+
+  .carousel-btn {
+    width: 35px; /* Botões menores */
+    height: 35px;
+    font-size: 14px;
+  }
+  .carousel-btn.left {
+    left: 10px;
+  }
+  .carousel-btn.right {
+    right: 10px;
+  }
+
+  /* Sua regra existente (mantida) */
+  .destinos-globleng {
+    grid-template-columns: 1fr;
+    width: 90%; /* Garante que os cards não colem na borda */
+    margin-top: -60px; /* Ajuste para sobrepor o header se necessário */
+  }
+}
+
+/* Breakpoint para celulares pequenos (ex: <= 480px) */
+@media (max-width: 480px) {
+  /* --- Header --- */
+  nav {
+    gap: 15px;
+  }
+
+  /* --- Título Principal --- */
+  .down h2 {
+    font-size: 22pt; /* Fonte ainda menor */
+  }
+
+  /* --- Carrossel --- */
+  .carousel-track img {
+    height: 220px; /* Altura bem reduzida para telas pequenas */
+  }
 }
