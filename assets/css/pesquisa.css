@@ -235,14 +235,14 @@ main {
 .card-info h3 {
     margin-bottom: 6px;
     font-size: 22px;
-    font-family: "DM Sans", sans-serif; /* Adicionado */
-    margin-top: 0; /* Reset */
+    font-family: "DM Sans", sans-serif; 
+    margin-top: 0; 
 }
 
 .card-info p {
     font-size: 16px;
     color: #777;
-    margin: 0; /* Reset */
+    margin: 0;
 }
 
 .card-origem {
@@ -258,7 +258,7 @@ main {
 
 .card-avaliacao {
     margin-top: 12px;
-    color: var(--green); /* Usando a cor de destaque */
+    color: var(--green);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -266,25 +266,70 @@ main {
     font-size: 16px;
 }
 
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: 30px; 
+  }
+  nav {
+    margin-right: 30px; 
+    gap: 25px; 
+  }
+
+  .link-search {
+    display: none;
+  }
+
+  header .down {
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+}
+
+/* Breakpoint para celulares */
 @media (max-width: 768px) {
-    .destinos-globleng {
-        grid-template-columns: 1fr;
-    }
-    
-    header .up {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    nav {
-        margin-right: 0;
-    }
-    header .down {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .down h2 {
-        font-size: 30pt;
-        width: 100%;
-    }
+  header .up {
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .destinos-globleng {
+    grid-template-columns: 1fr;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 75px;
+  }
+
+  .logo h1 {
+    font-size: 16pt;
+  }
+
+  .welcome-container {
+    font-size: 14pt; 
+  }
+
+  .login-button {
+    font-size: 11pt;
+    padding: 8px 25px;
+  }
+
+  header .down {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  .destinos-globleng {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+/* Breakpoint para celulares pequenos */
+@media (max-width: 480px) {
+  nav {
+    gap: 15px;
+  }
 }
