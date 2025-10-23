@@ -1,6 +1,5 @@
 @import url('variables.css');
 
-/* Overlay */
 .modal {
     display: none;
     align-items: center;
@@ -11,7 +10,7 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
@@ -23,7 +22,7 @@
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     animation: fadeIn 0.5s;
-    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+    overflow: hidden;
 }
 
 @keyframes fadeIn {

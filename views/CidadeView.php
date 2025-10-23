@@ -39,7 +39,7 @@ final class CidadeView
             $imagem = $cidade . $i;
             $imagem_url = "../assets/imgs/carrossel/" . $cidade . "/" . $imagem . ".jpg";
             
-            echo "<a href=\"" . htmlspecialchars($imagem_url) . "\" target=\"_blank\" rel=\"noopener noreferrer\">";
+            echo "<a href=\"#\">";
             echo "  <img src=\"" . htmlspecialchars($imagem_url) . "\" alt=\"" . htmlspecialchars($imagem) . "\" />";
             echo "</a>";
         }

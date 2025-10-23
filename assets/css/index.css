@@ -261,36 +261,32 @@ main {
 }
 
 @media (max-width: 1024px) {
-  /* --- Header --- */
   .logo {
-    margin-left: 30px; /* Reduz margem lateral */
+    margin-left: 30px; 
   }
   nav {
-    margin-right: 30px; /* Reduz margem lateral */
-    gap: 25px; /* Reduz espaço entre itens da nav */
+    margin-right: 30px;
+    gap: 25px;
   }
 
   .link-search {
     display: none;
   }
 
-  /* --- Título Principal --- */
   header .down {
-    margin-left: 50px; /* Reduz margem */
+    margin-left: 50px;
     margin-top: 30px;
   }
   .down h2 {
-    width: auto; /* Remove a largura fixa! */
-    max-width: 90%; /* Limita a largura */
-    font-size: 40pt; /* Reduz um pouco a fonte */
+    width: auto;
+    max-width: 90%;
+    font-size: 40pt;
   }
 }
 
-/* Breakpoint para celulares (modificando o seu existente) */
 @media (max-width: 768px) {
-  /* --- Header --- */
   header .up {
-    align-items: center; /* Centraliza os itens empilhados */
+    align-items: center;
     gap: 20px;
     padding: 15px 0;
   }
@@ -300,7 +296,7 @@ main {
   }
 
   .logo img {
-    width: 45px; /* Reduz o tamanho do logo */
+    width: 45px;
     height: 75px;
   }
 
@@ -309,7 +305,7 @@ main {
   }
 
   .welcome-container {
-    font-size: 14pt; /* Reduz fonte do "Olá" */
+    font-size: 14pt;
   }
 
   .login-button {
@@ -317,36 +313,31 @@ main {
     padding: 8px 25px;
   }
 
-  /* --- Título Principal --- */
   header .down {
-    margin-left: 0; /* Remove margem */
+    margin-left: 0; 
     margin-top: 20px;
-    padding: 0 20px; /* Adiciona padding lateral para não colar nas bordas */
-    text-align: center; /* Centraliza o texto */
+    padding: 0 20px;
+    text-align: center; 
   }
 
   .down h2 {
-    font-size: 28pt; /* Reduz drasticamente a fonte */
-    max-width: 100%; /* Garante que ocupe o espaço (com padding) */
+    font-size: 28pt; 
+    max-width: 100%;
   }
 
-  /* Sua regra existente (mantida) */
   .destinos-globleng {
     grid-template-columns: 1fr;
-    width: 90%; /* Garante que os cards não colem na borda */
-    margin-top: -60px; /* Ajuste para sobrepor o header se necessário */
+    width: 90%;
+    margin-top: -60px;
   }
 }
 
-/* Breakpoint para celulares pequenos (ex: <= 480px) */
 @media (max-width: 480px) {
-  /* --- Header --- */
   nav {
     gap: 15px;
   }
-
-  /* --- Título Principal --- */
+  
   .down h2 {
-    font-size: 22pt; /* Fonte ainda menor */
+    font-size: 22pt;
   }
 }

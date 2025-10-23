@@ -38,7 +38,6 @@
   color: #f0c05a;
 }
 
-/* Breakpoint para Tablets */
 @media (max-width: 1024px) {
   .globleng-footer {
     padding: 25px 40px;
@@ -64,7 +63,6 @@
   }
 }
 
-/* Breakpoint para Celulares (ex: <= 768px) */
 @media (max-width: 768px) {
   .globleng-footer {
     flex-direction: column;
@@ -97,7 +95,6 @@
   }
 }
 
-/* Breakpoint para Celulares Pequenos */
 @media (max-width: 480px) {
   .globleng-footer {
     gap: 25px; 

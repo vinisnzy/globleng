@@ -209,8 +209,8 @@ main {
 .card-globleng a {
     text-decoration: none;
     color: inherit;
-    display: block; /* Para a imagem e overlay funcionarem como link */
-    position: relative; /* Para o overlay */
+    display: block; 
+    position: relative
 }
 
 .card-vermais {

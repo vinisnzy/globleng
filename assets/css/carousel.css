@@ -1,10 +1,9 @@
-/* Seus estilos base (estão corretos) */
 .carousel-section {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 60px auto 75px auto; /* Adicionei a margem inferior */
+  margin: 60px auto 75px auto;
   width: 100%;
   max-width: 1400px;
   position: relative;
@@ -16,7 +15,7 @@
   overflow: hidden;
   border-radius: 20px;
   width: 100%;
-  max-width: 1100px; 
+  max-width: 1100px;
 }
 
 .carousel-track {
@@ -28,15 +27,15 @@
   flex-shrink: 0;
   text-decoration: none;
   width: 360px;
-  height: 440px; /* Altura base */
+  height: 440px;
   margin-right: 20px;
   display: block;
-  transition: height 0.3s ease; /* Adiciona transição suave da altura */
+  transition: height 0.3s ease;
 }
 
 .carousel-track img {
   width: 100%;
-  height: 100%; /* Imagem sempre preenche o 'a' */
+  height: 100%;
   object-fit: cover;
   border-radius: 15px;
   cursor: pointer;
@@ -51,15 +50,14 @@
   align-items: center;
   justify-content: center;
   border: none;
-  padding: 100px 14px; /* Tamanho definido pelo padding */
+  padding: 100px 14px;
   font-size: 20px;
   cursor: pointer;
   border-radius: 50px;
   color: var(--green);
-  transition: all 0.3s ease; /* Transição geral */
+  transition: all 0.3s ease;
   z-index: 5;
-  /* Garantir que altura e largura não sejam fixas para o padding funcionar */
-  width: auto; 
+  width: auto;
   height: auto;
 }
 
@@ -67,13 +65,9 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* ================================= */
-/* === MEDIA QUERIES CORRIGIDAS === */
-/* ================================= */
-
 @media (max-width: 1024px) {
   .carousel-track a {
-    height: 350px; /* CORREÇÃO: Mudar a altura do 'a', não da 'img' */
+    height: 350px;
   }
 }
 
@@ -81,33 +75,30 @@
   .carousel-section {
     width: 100%;
     margin: 30px auto;
-    padding: 0; /* Remove padding lateral em telas pequenas */
+    padding: 0;
   }
 
   .carousel-container {
     border-radius: 0;
-    max-width: 100%; /* Ocupa 100% da tela */
+    max-width: 100%;
   }
 
   .carousel-track {
-     /* Adiciona padding no track para ver as bordas no celular */
     padding: 0 15px;
   }
 
   .carousel-track a {
-    height: 300px; /* CORREÇÃO: Mudar a altura do 'a' */
+    height: 300px;
   }
 
   .carousel-btn {
-    /* CORREÇÃO: Remover padding e definir width/height */
     padding: 0;
-    width: 35px; 
+    width: 35px;
     height: 35px;
     font-size: 14px;
-    border-radius: 50%; /* Garante que seja um círculo */
+    border-radius: 50%;
   }
 
-  /* Reposiciona os botões (seus seletores .left/.right não estavam na media query) */
   .carousel-btn.left {
     left: 10px;
   }
@@ -118,11 +109,11 @@
 
 @media (max-width: 480px) {
   .carousel-track {
-    padding: 0 10px; /* Menor padding */
+    padding: 0 10px;
   }
 
   .carousel-track a {
-    width: 280px; /* Slides menores para caber melhor */
-    height: 250px; /* CORREÇÃO: Mudar a altura do 'a' */
+    width: 280px;
+    height: 250px;
   }
 }
