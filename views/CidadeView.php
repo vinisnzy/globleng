@@ -29,20 +29,26 @@ final class CidadeView
     {
         echo "<section class=\"carousel-section\">";
         echo "<button class=\"carousel-btn left\">";
-        echo  "<i class=\"fa fa-chevron-left\"></i>";
-        echo  "</button>";
+        echo "  <i class=\"fa fa-chevron-left\"></i>";
+        echo "</button>";
 
-        echo  "<div class=\"carousel-container\">";
-        echo  "<div class=\"carousel-track\">";
+        echo "<div class=\"carousel-container\">";
+        echo "<div class=\"carousel-track\">";
+        
         for ($i = 1; $i <= 5; $i++) {
             $imagem = $cidade . $i;
-            echo  "<img src=\"../assets/imgs/carrossel/" . $cidade . "/" . $imagem . ".jpg\" alt=\"" . $imagem . "\" />";
+            $imagem_url = "../assets/imgs/carrossel/" . $cidade . "/" . $imagem . ".jpg";
+            
+            echo "<a href=\"" . htmlspecialchars($imagem_url) . "\" target=\"_blank\" rel=\"noopener noreferrer\">";
+            echo "  <img src=\"" . htmlspecialchars($imagem_url) . "\" alt=\"" . htmlspecialchars($imagem) . "\" />";
+            echo "</a>";
         }
-        echo  "</div>";
-        echo  "</div>";
+        
+        echo "</div>";
+        echo "</div>";
 
         echo "<button class=\"carousel-btn right\">";
-        echo "<i class=\"fa fa-chevron-right\"></i>";
+        echo "  <i class=\"fa fa-chevron-right\"></i>";
         echo "</button>";
         echo "</section>";
     }

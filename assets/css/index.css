@@ -284,11 +284,6 @@ main {
     max-width: 90%; /* Limita a largura */
     font-size: 40pt; /* Reduz um pouco a fonte */
   }
-
-  /* --- Carrossel --- */
-  .carousel-track img {
-    height: 350px; /* Altura menor para tablets */
-  }
 }
 
 /* Breakpoint para celulares (modificando o seu existente) */
@@ -335,32 +330,6 @@ main {
     max-width: 100%; /* Garante que ocupe o espaço (com padding) */
   }
 
-  /* --- Carrossel --- */
-  .carousel-section {
-    width: 100%; /* Carrossel ocupa a largura total */
-    margin: 30px auto;
-  }
-
-  .carousel-container {
-    border-radius: 0; /* Remove bordas arredondadas no mobile (opcional) */
-  }
-
-  .carousel-track img {
-    height: 300px; /* Altura menor para celulares */
-  }
-
-  .carousel-btn {
-    width: 35px; /* Botões menores */
-    height: 35px;
-    font-size: 14px;
-  }
-  .carousel-btn.left {
-    left: 10px;
-  }
-  .carousel-btn.right {
-    right: 10px;
-  }
-
   /* Sua regra existente (mantida) */
   .destinos-globleng {
     grid-template-columns: 1fr;
@@ -379,10 +348,5 @@ main {
   /* --- Título Principal --- */
   .down h2 {
     font-size: 22pt; /* Fonte ainda menor */
-  }
-
-  /* --- Carrossel --- */
-  .carousel-track img {
-    height: 220px; /* Altura bem reduzida para telas pequenas */
   }
 }

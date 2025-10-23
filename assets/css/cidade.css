@@ -128,3 +128,75 @@ body {
     background-color: var(--green);
     color: white;
 }
+
+/* --- Para Tablets (Telas até 768px) --- */
+@media (max-width: 768px) {
+  .video-title {
+    font-size: 28pt; /* Reduz a fonte do título */
+    left: 50%; /* Centraliza o título */
+    width: 90%; /* Garante que não transborde */
+    text-align: center;
+  }
+
+  .video-title p {
+    font-size: 14pt;
+  }
+
+  .pass {
+    width: 80%; /* Ocupa mais espaço na tela */
+    padding: 20px 30px;
+    margin-top: 60px; /* Reduz o espaçamento */
+  }
+
+  .pass .pass-info,
+  .pass .pass-price {
+    font-size: 13pt; /* Reduz a fonte das passagens */
+  }
+}
+
+/* --- Para Celulares (Telas até 480px) --- */
+@media (max-width: 480px) {
+  .video-container {
+    height: 60vh; /* Altura menor para caber melhor no celular */
+  }
+
+  .video-title {
+    font-size: 22pt; /* Fonte ainda menor */
+  }
+
+  .video-title p {
+    font-size: 12pt;
+  }
+
+  .passes {
+    bottom: 20px; /* Puxa menos para cima */
+  }
+
+  .pass {
+    width: 90%; /* Ocupa quase a tela inteira */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .pass i {
+    font-size: 22pt;
+  }
+
+  .pass .pass-info {
+    margin-left: 0; /* Remove a margem da esquerda */
+    margin-top: 15px; /* Adiciona espaço acima */
+    text-align: center;
+  }
+  
+  .pass .pass-price {
+    margin-top: 15px; /* Adiciona espaço acima */
+    font-size: 13pt;
+  }
+
+  .btn-ver-mais {
+    width: 85%; /* Botão fica mais largo */
+    padding: 12px 0;
+  }
+}
