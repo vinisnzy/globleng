@@ -13,6 +13,8 @@ $nome_cidade = $_GET['nome'];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   session_start();
   if (!isset($_SESSION['usuario_id'])) {
+    unset($_SESSION['redirect']);
+    $_SESSION['redirect'] = $_SERVER['REQUEST_URI'];
     header("Location: auth/login.php");
   }
   $cidade_id = $cidadeView->getIdCidadePorNome(ucfirst($nome_cidade));

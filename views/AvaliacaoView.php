@@ -18,21 +18,9 @@ final class AvaliacaoView
     function getAvaliacoesPorCidade($cidade) {
         $avaliacoes = $this->avaliacaoController->getAvaliacoesPorCidade($cidade);
 
-        // Formatação e tradução da data de avaliação do usuário
-        $data_avaliacao_pattern = "d 'de' MMMM 'de' y";
-
-        $formatter = new IntlDateFormatter(
-            'pt_BR',
-            IntlDateFormatter::FULL,
-            IntlDateFormatter::NONE,
-            'America/Sao_Paulo',
-            IntlDateFormatter::GREGORIAN,
-            $data_avaliacao_pattern
-        );
-
         foreach($avaliacoes as $avaliacao) {
             
-            $data_avaliacao = new DateTime($avaliacao['data_avaliacao']);
+            $data_avaliacao = formatAvaliationDate($avaliacao['data_avaliacao']);
 
             echo "<div class=\"review-card\">";
             echo "<div class=\"review-header\">";
@@ -49,7 +37,7 @@ final class AvaliacaoView
             echo "</div>";
             echo "</div>";
             echo "<p class=\"review-text\">\"{$avaliacao['comentario']}\"</p>";
-            echo "<span class=\"review-date\">{$formatter->format($data_avaliacao)}</span>";
+            echo "<span class=\"review-date\">{$data_avaliacao}</span>";
             echo "</div>";
         }
     }

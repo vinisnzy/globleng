@@ -25,4 +25,25 @@ function formatPrice($price) {
     return number_format($price, 2, ',', '.');
 }
 
+function formatAvaliationDate($date) {
+    $traducaoMeses = [
+            'January' => 'Janeiro',
+            'February' => 'Fevereiro',
+            'March' => 'Março',
+            'April' => 'Abril',
+            'May' => 'Maio',
+            'June' => 'Junho',
+            'July' => 'Julho',
+            'August' => 'Agosto',
+            'September' => 'Setembro',
+            'October' => 'Outubro',
+            'November' => 'Novembro',
+            'December' => 'Dezembro'
+    ];
+    $date = new DateTime($date);
+    $date = $date->format('d-F-Y');
+    $date = explode("-", $date);
+    return "{$date[0]} de {$traducaoMeses[$date[1]]} de {$date[2]}";
+}
+
 ?>

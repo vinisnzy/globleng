@@ -12,6 +12,10 @@ final class UsuarioView
         $this->usuarioController = new UsuarioController();
     }
 
+    function getUsuarioPorId($id)
+    {
+        return $this->usuarioController->getUsuarioPorId($id);
+    }
     function cadastrarUsuario($nome, $email, $cpf, $senha)
     {
         try {
@@ -36,6 +40,10 @@ final class UsuarioView
         $primeiro_nome = explode(" ", $usuario['nome'])[0];
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nome'] = $primeiro_nome;
+        if (isset($_SESSION['redirect'])) {
+            header('Location: ' . $_SESSION['redirect']);
+            exit();
+        }
         header('Location: ../index.php');
         exit();
     }

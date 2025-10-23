@@ -1,8 +1,13 @@
 <?php
 require_once '../../views/UsuarioView.php';
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 $erro = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $usuarioView = new UsuarioView();
     $email = trim($_POST['email']);
     $senha = trim($_POST['senha']);

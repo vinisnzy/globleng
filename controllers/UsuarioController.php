@@ -12,6 +12,11 @@ final class UsuarioController
         $this->usuarioModel = new UsuarioModel();
     }
 
+    function getUsuarioPorId($id)
+    {
+        return $this->usuarioModel->getUsuarioPorId($id);
+    }
+
     function cadastrarUsuario($nome, $email, $cpf, $senha)
     {
         $cpf = preg_replace('/\D/', '', $cpf);

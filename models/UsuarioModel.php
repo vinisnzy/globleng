@@ -12,6 +12,24 @@ final class UsuarioModel
         $this->connection = $database->connection;
     }
 
+    function getUsuarioPorId($id)
+    {
+        $stmt = $this->connection->prepare("SELECT * FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
+    function getUsuarioPorEmail($email)
+    {
+        $stmt = $this->connection->prepare("SELECT * FROM usuarios WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
     function cadastrarUsuario($nome, $email, $cpf, $senha_hash)
     {
         $stmt = $this->connection->prepare("INSERT INTO usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)");
