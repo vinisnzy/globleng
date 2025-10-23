@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/10/2025 às 02:53
+-- Tempo de geração: 23/10/2025 às 04:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -46,7 +46,7 @@ INSERT INTO `avaliacoes` (`id`, `usuario_id`, `cidade_id`, `nota`, `comentario`,
 (3, 7, 1, 5, 'Experiência cultural incrível. Recomendo visitar o bairro de Akihabara e o Templo Senso-ji.', '2025-10-18 00:53:00'),
 (4, 3, 2, 5, 'Adorei Toronto! A CN Tower tem uma vista de tirar o fôlego. Povo muito acolhedor.', '2025-10-18 00:53:00'),
 (5, 6, 2, 4, 'Cidade multicultural com ótimos restaurantes. O inverno é bem rigoroso, vá preparado.', '2025-10-18 00:53:00'),
-(6, 1, 2, 4, 'Ótima para passeios em família. O aquário é um dos melhores que já visitei.', '2025-10-18 00:53:00'),
+(6, 7, 2, 4, 'Ótima para passeios em família. O aquário é um dos melhores que já visitei.', '2025-10-18 00:53:00'),
 (7, 4, 3, 5, 'Zermatt é um sonho. As montanhas são majestosas e a vila é um charme. Perfeito para esquiar.', '2025-10-18 00:53:00'),
 (8, 5, 3, 5, 'A vista do Matterhorn é inesquecível. Uma das viagens mais bonitas que já fiz.', '2025-10-18 00:53:00'),
 (9, 2, 3, 4, 'Lugar caríssimo, mas vale cada centavo. A cidade é livre de carros, o que a torna muito tranquila.', '2025-10-18 00:53:00'),
@@ -57,14 +57,14 @@ INSERT INTO `avaliacoes` (`id`, `usuario_id`, `cidade_id`, `nota`, `comentario`,
 (14, 4, 5, 5, 'Uma das minhas cidades favoritas! Tantas coisas para fazer, desde teatros a mercados de rua.', '2025-10-18 00:53:00'),
 (15, 5, 5, 4, 'Transporte público eficiente e muitos parques lindos. Recomendo o Camden Market.', '2025-10-18 00:53:00'),
 (16, 6, 6, 5, 'A subida da Table Mountain é obrigatória. A Cidade do Cabo é uma das mais lindas do mundo.', '2025-10-18 00:53:00'),
-(17, 1, 6, 5, 'A combinação de montanha e mar é perfeita. Adorei a região do V&A Waterfront.', '2025-10-18 00:53:00'),
+(17, 5, 6, 5, 'A combinação de montanha e mar é perfeita. Adorei a região do V&A Waterfront.', '2025-10-18 00:53:00'),
 (18, 7, 6, 4, 'Lugar com uma história forte e paisagens naturais incríveis. Vale a pena alugar um carro e explorar a península.', '2025-10-18 00:53:00'),
 (19, 3, 7, 5, 'Dubai é impressionante. A arquitetura é futurista e tudo é grandioso. Uma experiência única.', '2025-10-18 00:53:00'),
 (20, 2, 7, 4, 'Muito quente no verão, mas os shoppings e hotéis têm ar condicionado por toda parte. O safári no deserto é divertido.', '2025-10-18 00:53:00'),
 (21, 5, 7, 4, 'É uma cidade de superlativos. O Burj Khalifa é gigante. Interessante ver o contraste cultural.', '2025-10-18 00:53:00'),
 (22, 4, 8, 5, 'Queenstown é o melhor lugar do mundo para quem gosta de aventura e esportes radicais! A energia da cidade é contagiante.', '2025-10-18 00:53:00'),
 (23, 6, 8, 5, 'Capital mundial da aventura! O bungee jump foi a melhor experiência da minha vida. As paisagens são de outro planeta.', '2025-10-18 00:53:00'),
-(24, 1, 8, 4, 'Mesmo para quem não é radical, a cidade oferece passeios de barco e trilhas maravilhosas.', '2025-10-18 00:53:00');
+(24, 3, 8, 4, 'Mesmo para quem não é radical, a cidade oferece passeios de barco e trilhas maravilhosas.', '2025-10-18 00:53:00');
 
 -- --------------------------------------------------------
 
@@ -109,22 +109,8 @@ CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `passagem_id` int(11) NOT NULL,
-  `valor_pago` decimal(10,2) NOT NULL,
-  `status` enum('pendente','confirmada','cancelada','reembolsada') NOT NULL DEFAULT 'confirmada',
+  `status` enum('pendente','confirmada','cancelada','reembolsada') NOT NULL DEFAULT 'pendente',
   `data_compra` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `favoritos`
---
-
-CREATE TABLE `favoritos` (
-  `id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `passagem_id` int(11) NOT NULL,
-  `data_favoritado` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -212,6 +198,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(100) NOT NULL,
   `cpf` varchar(11) NOT NULL,
   `senha` varchar(100) NOT NULL,
+  `telefone` varchar(14) DEFAULT NULL,
   `data_criacao` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -219,14 +206,14 @@ CREATE TABLE `usuarios` (
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `senha`, `data_criacao`) VALUES
-(1, 'Teste', 'teste@gmail.com', '12345678901', '$2y$10$iRKImLEgubhV7qCXPsxJ8.trYnwmul3HGtgVDY8OXed6ZyiMvLuWm', '2025-10-06 16:45:30'),
-(2, 'Ana Silva', 'ana.silva@email.com', '11122233344', '$2a$12$FHQ5PZ77QVB2j7vXksqFMONqWmnuMICgkVwRewCRUUKyFaHAhZeuC', '2025-10-18 00:48:41'),
-(3, 'Carlos Pereira', 'carlos.p@email.com', '55566677788', '$2a$12$.eY7HrKou0V74iQ42nMAl.Ub1wXuOb01LWLU.1VqoKq5Ge50UYk/K', '2025-10-18 00:50:38'),
-(4, 'Mariana Costa', 'mariana.costa@email.com', '99988877766', '$2a$12$nc5/d73SVZIU9Z9ZBOisneRuJDGQzQz1lQ/2O6NRvGHAfw.6DVBJC', '2025-10-18 00:50:38'),
-(5, 'Lucas Martins', 'lucas.m@email.com', '10120230344', '$2a$12$uUflMfL4mW4BWliIg8Yc/uu.ePZQruC6KDgJXwZCXjbOlBOoJ1jpW', '2025-10-18 00:50:38'),
-(6, 'Juliana Santos', 'juliana.s@email.com', '50560670788', '$2a$12$yAvuzkVu5RytA.xwz5.pwOicPRmJ2ULy2OaxLBi.2lnPGuqZeVk.m', '2025-10-18 00:50:38'),
-(7, 'Fernando Oliveira', 'fernando.o@email.com', '90980870766', '$2a$12$vmm7KfN3LgOk7hMSuFnWyuhffDNAQlS7Lve2U1zE4hTLbHYMxNOZ.', '2025-10-18 00:50:38');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `senha`, `telefone`, `data_criacao`) VALUES
+(1, 'Teste', 'teste@gmail.com', '12345678901', '$2y$10$iRKImLEgubhV7qCXPsxJ8.trYnwmul3HGtgVDY8OXed6ZyiMvLuWm', NULL, '2025-10-06 16:45:30'),
+(2, 'Ana Silva', 'ana.silva@email.com', '11122233344', '$2a$12$FHQ5PZ77QVB2j7vXksqFMONqWmnuMICgkVwRewCRUUKyFaHAhZeuC', NULL, '2025-10-18 00:48:41'),
+(3, 'Carlos Pereira', 'carlos.p@email.com', '55566677788', '$2a$12$.eY7HrKou0V74iQ42nMAl.Ub1wXuOb01LWLU.1VqoKq5Ge50UYk/K', NULL, '2025-10-18 00:50:38'),
+(4, 'Mariana Costa', 'mariana.costa@email.com', '99988877766', '$2a$12$nc5/d73SVZIU9Z9ZBOisneRuJDGQzQz1lQ/2O6NRvGHAfw.6DVBJC', NULL, '2025-10-18 00:50:38'),
+(5, 'Lucas Martins', 'lucas.m@email.com', '10120230344', '$2a$12$uUflMfL4mW4BWliIg8Yc/uu.ePZQruC6KDgJXwZCXjbOlBOoJ1jpW', NULL, '2025-10-18 00:50:38'),
+(6, 'Juliana Santos', 'juliana.s@email.com', '50560670788', '$2a$12$yAvuzkVu5RytA.xwz5.pwOicPRmJ2ULy2OaxLBi.2lnPGuqZeVk.m', NULL, '2025-10-18 00:50:38'),
+(7, 'Fernando Oliveira', 'fernando.o@email.com', '90980870766', '$2a$12$vmm7KfN3LgOk7hMSuFnWyuhffDNAQlS7Lve2U1zE4hTLbHYMxNOZ.', NULL, '2025-10-18 00:50:38');
 
 --
 -- Índices para tabelas despejadas
@@ -253,14 +240,6 @@ ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_compras_usuario` (`usuario_id`),
   ADD KEY `FK_compras_passagem` (`passagem_id`);
-
---
--- Índices de tabela `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `usuario_id` (`usuario_id`,`passagem_id`),
-  ADD KEY `FK_favoritos_passagem` (`passagem_id`);
 
 --
 -- Índices de tabela `passagens`
@@ -301,12 +280,6 @@ ALTER TABLE `compras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `favoritos`
---
-ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `passagens`
 --
 ALTER TABLE `passagens`
@@ -335,13 +308,6 @@ ALTER TABLE `avaliacoes`
 ALTER TABLE `compras`
   ADD CONSTRAINT `FK_compras_passagem` FOREIGN KEY (`passagem_id`) REFERENCES `passagens` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_compras_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
-
---
--- Restrições para tabelas `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD CONSTRAINT `FK_favoritos_passagem` FOREIGN KEY (`passagem_id`) REFERENCES `passagens` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_favoritos_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 
 --
 -- Restrições para tabelas `passagens`
